@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -28,5 +28,16 @@
     "typescript": "^4.2.4"
   },
   "license": "MIT",
-  "copyright.owner": "Ayush Singh"
+  "copyright.owner": "Ayush Singh",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doomL/Portfolio-LauritoDomenico.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/doomL/Portfolio-LauritoDomenico/issues"
+  },
+  "homepage": "https://github.com/doomL/Portfolio-LauritoDomenico#readme",
+  "description": ""
 }

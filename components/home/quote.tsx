@@ -47,7 +47,7 @@ const QuoteSection = () => {
         }`}
       >
         In the world of <span className="text-strong font-bold">web development</span>, 
-        I'm deeply dedicated to paying close attention to every detail.
+        I&apos;m deeply dedicated to paying close attention to every detail.
       </h1>
     </div>
   );
