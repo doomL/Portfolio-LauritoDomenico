@@ -4,7 +4,8 @@ const nextConfig = {
     distDir: 'dist',
     output: 'export',
     images:{
-        unoptimized:true,
+        loader: 'akamai',
+        path:'/'
     }
 };
 

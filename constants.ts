@@ -176,7 +176,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     size: ItemSize.SMALL,
     subtitle:"High School Diploma at Liceo Scientifico \"E. Mattei\" in Castrovillari (CS)",
     // image: "/timeline/xda.svg",
-    slideImage: "/timeline/bg.jpg ",
+    slideImage: "/timeline/bg.jpg",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
