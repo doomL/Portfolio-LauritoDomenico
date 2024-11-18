@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
  
 
 import { MENULINKS, SKILLS } from "../../constants";
@@ -113,12 +115,12 @@ const SkillsSection = () => {
           { <div className="mt-10">
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Back-end Development</h3>
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=dotnet,java,python,nodejs,cs,flask,express" />
+            <img src="https://skillicons.dev/icons?i=spring,dotnet,java,python,nodejs,cs,flask,express" />
           </a>
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Front-end Development</h3>
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=jquery,js,css,bootstrap,html,figma" />
+            <img src="https://skillicons.dev/icons?i=react,tailwind,nextjs,angular,jquery,js,css,bootstrap,html,figma" />
           </a>
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Databases</h3>
@@ -128,7 +130,7 @@ const SkillsSection = () => {
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Others</h3>
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=cpp,git,androidstudio,kubernetes,docker,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton" />
+            <img src="https://skillicons.dev/icons?i=cpp,git,nginx,solidity,androidstudio,kubernetes,docker,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton" />
           </a>
             {/* {renderSkillColumn("BACKEND DEVELOPMENT", SKILLS.backend)}
             {renderSkillColumn("FRONTEND DEVELOPMENT", SKILLS.frontend)}

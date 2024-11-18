@@ -217,7 +217,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     size: ItemSize.SMALL,
     subtitle:
       "Development of a web application with face and object recognition. Use of: Node.js, Python, Flask, OpenCV."+'</br></br></br></br> ',
-    image: "/timeline/artemat.png",
+    image: "/timeline/logo_art.svg",
     slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
     alignment: Branch.RIGHT,
@@ -314,11 +314,17 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
- 
- 
-  
- 
- 
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Full-Stack Developer - Artémat",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Full-Stack Developer at Artémat, using Technologies like Node.js, React, Next.js, Python, LangChain, Spring, Angular."+'</br></br></br></br> ',
+    image: "/timeline/logo_art.svg",
+    slideImage: "/timeline/bgartemat.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
 ];
 
 export type TimelineNodeV2 = CheckpointNode | BranchNode;
