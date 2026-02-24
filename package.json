@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "fetch-project-images": "node scripts/fetch-project-images.js",
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
