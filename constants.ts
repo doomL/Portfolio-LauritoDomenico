@@ -82,7 +82,7 @@ export const PROJECTS: IProject[] = [
     image: "https://www.skillmosaico.it/website/wp-content/uploads/2025/09/logo_col_orizz_byArt.svg",
     blurImage: "/projects/blur/crazyStaickers.png",
     description: "Configurable assessment platform. Build ideal candidate profiles with gamified simulation scenarios.",
-    gradient: ["#1E3A5F", "#0F172A"],
+    gradient: ["#2E6B6B", "#1A5252"],
     url: "https://www.skillmosaico.it/",
     tech: [],
     category: "professional",
