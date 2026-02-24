@@ -1,6 +1,6 @@
  
 
-import { EMAIL, MENULINKS, SOCIAL_LINKS } from "../../constants";
+import { MENULINKS, SOCIAL_LINKS } from "../../constants";
 import Image from "next/image";
 import Button, { ButtonTypes } from "./button";
 
@@ -60,7 +60,7 @@ const Footer = () => {
       className="w-full relative select-none bg-cover flex flex-col items-stretch"
       id={footerRef}
     >
-      <img
+      <Image
         src="/footer-curve.svg"
         alt="Footer"
         className="w-full"
