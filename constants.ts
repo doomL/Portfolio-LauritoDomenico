@@ -42,7 +42,7 @@ export const TYPED_STRINGS = [
 ];
 
 export const HERO_BIO =
-  "Full Stack Developer and AI Systems Engineer with a focus on LLM-powered applications, HR tech platforms, and applied research. Co-author of 2 academic publications, including an IEEE Outstanding Paper Award at PICom 2025.";
+  "Full Stack Developer & AI Systems Engineer. 2 publications, IEEE Outstanding Paper Award @ PICom 2025.";
 
 export const EMAIL = "laurito.dom@gmail.com";
 
@@ -403,7 +403,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "UMARI Project — Artémat S.r.l.",
     size: ItemSize.SMALL,
     subtitle:
-      "Developed a blockchain-based digital passport system for agricultural supply chain traceability, in collaboration with MACROFARM and CGF Food, as part of a Calabrian regional innovation initiative.",
+      "Blockchain-based digital passport for agricultural traceability. Artemat + MACROFARM + CGF Food.",
     image: "/timeline/logo_art.svg",
     slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
@@ -412,7 +412,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   {
     type: NodeTypes.CHECKPOINT,
     title: "2025 – Oct",
-    size: ItemSize.LARGE,
+    size: ItemSize.SMALL,
     shouldDrawLine: false,
     alignment: Branch.LEFT,
   },
@@ -421,7 +421,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "IEEE Outstanding Paper Award 🏆",
     size: ItemSize.SMALL,
     subtitle:
-      "\"AI-assisted Intent-Mapping and translation for Digital Twins Network applications\" — IEEE PICom 2025, Hakodate, Japan. Research conducted within the European VOLTA COHERENT project by Fondazione RESTART, in collaboration with Università della Calabria.",
+      "AI-assisted Intent-Mapping for Digital Twin Networks — IEEE PICom 2025, Japan. VOLTA COHERENT project.",
     image: "/timeline/logo_art.svg",
     slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
@@ -430,7 +430,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   {
     type: NodeTypes.CHECKPOINT,
     title: "2026 – Feb",
-    size: ItemSize.LARGE,
+    size: ItemSize.SMALL,
     shouldDrawLine: false,
     alignment: Branch.LEFT,
   },
@@ -439,7 +439,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "ECAI 2025 Publication",
     size: ItemSize.SMALL,
     subtitle:
-      "Co-authored \"LUMI Agents: A Fuzzy BDI Framework for Intelligent Agents\" published on CEUR-WS Vol-4165, 2nd Workshop on Green-Aware AI @ ECAI 2025.",
+      "LUMI Agents: A Fuzzy BDI Framework for Intelligent Agents — CEUR-WS Vol-4165, ECAI 2025.",
     image: "/timeline/unical.png",
     slideImage: "/timeline/bgunical.jpg",
     shouldDrawLine: true,

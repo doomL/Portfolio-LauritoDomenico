@@ -121,34 +121,19 @@ const SkillsSection = () => {
           </a>
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Front-end Development</h3>
-          <div className="flex flex-wrap items-center gap-2">
-            <a href="https://skillicons.dev">
-              <img src="https://skillicons.dev/icons?i=react,tailwind,nextjs,angular,jquery,js,css,bootstrap,html,figma" />
-            </a>
-            <span className="text-sm px-2 py-1 rounded bg-gray-800 text-gray-300 seq">
-              PrimeNG
-            </span>
-          </div>
+          <a href="https://skillicons.dev">
+            <img src="https://skillicons.dev/icons?i=react,tailwind,nextjs,angular,jquery,js,css,bootstrap,html,figma" />
+          </a>
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Databases</h3>
-          <div className="flex flex-wrap items-center gap-2">
-            <a href="https://skillicons.dev">
-              <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,redis" />
-            </a>
-            <span className="text-sm px-2 py-1 rounded bg-gray-800 text-gray-300 seq">
-              Qdrant
-            </span>
-          </div>
+          <a href="https://skillicons.dev">
+            <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,redis" />
+          </a>
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Others</h3>
-          <div className="flex flex-wrap items-center gap-2">
-            <a href="https://skillicons.dev">
-              <img src="https://skillicons.dev/icons?i=cpp,git,nginx,solidity,androidstudio,kubernetes,docker,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton" />
-            </a>
-            <span className="text-sm px-2 py-1 rounded bg-gray-800 text-gray-300 seq">
-              OpenRouter
-            </span>
-          </div>
+          <a href="https://skillicons.dev">
+            <img src="https://skillicons.dev/icons?i=cpp,git,nginx,solidity,androidstudio,kubernetes,docker,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton" />
+          </a>
             {/* {renderSkillColumn("BACKEND DEVELOPMENT", SKILLS.backend)}
             {renderSkillColumn("FRONTEND DEVELOPMENT", SKILLS.frontend)}
             {renderSkillColumn("Other Skills", SKILLS.other)} */}
