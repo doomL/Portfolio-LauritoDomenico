@@ -507,7 +507,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
   return (
     <section
       className="w-full relative select-none min-h-screen section-container py-8 flex flex-col justify-center"
-      id={MENULINKS[3].ref}
+      id={MENULINKS.find((l) => l.ref === "timeline")?.ref ?? "timeline"}
     >
       {renderSectionTitle()}
       <div className="grid grid-cols-12 gap-4 mt-20">
