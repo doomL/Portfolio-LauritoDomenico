@@ -3,8 +3,8 @@
 export const METADATA = {
   title: "Portfolio | Laurito Domenico",
   description:
-    "Hi, I'm a full stack developer. I have a passion for creating web applications and software that seamlessly integrate both front-end and back-end components. As a full stack developer, I enjoy the challenges and the opportunities to work on a wide range of technologies and frameworks.",
-  siteUrl: "https://lauritodomenico.com/",
+    "Full Stack Developer and AI Systems Engineer with a focus on LLM-powered applications, HR tech platforms, and applied research. Co-author of 2 academic publications, including an IEEE Outstanding Paper Award at PICom 2025.",
+  siteUrl: "https://portfolio.lauritodomenico.com/",
 };
 
 export const MENULINKS = [
@@ -15,6 +15,10 @@ export const MENULINKS = [
   {
     name: "Works",
     ref: "works",
+  },
+  {
+    name: "Publications",
+    ref: "publications",
   },
   {
     name: "Skills",
@@ -32,10 +36,13 @@ export const MENULINKS = [
 
 export const TYPED_STRINGS = [
   "Full-Stack Developer",
-  "I design and develop things",
-  "I develop modern frontend apps",
-  "I design dynamic user experience",
+  "AI Systems Engineer",
+  "LLM-powered applications",
+  "I design and build things that work",
 ];
+
+export const HERO_BIO =
+  "Full Stack Developer and AI Systems Engineer with a focus on LLM-powered applications, HR tech platforms, and applied research. Co-author of 2 academic publications, including an IEEE Outstanding Paper Award at PICom 2025.";
 
 export const EMAIL = "laurito.dom@gmail.com";
 
@@ -55,9 +62,62 @@ export interface IProject {
   gradient: [string, string];
   url: string;
   tech: string[];
+  category?: "professional" | "academic";
 }
 
 export const PROJECTS: IProject[] = [
+  // Professional Work
+  {
+    name: "InPlayAI",
+    image: "/timeline/bgartemat.jpg",
+    blurImage: "/projects/blur/crazyStaickers.png",
+    description: "AI-powered HR assessment platform that analyses how candidates think — not just what they answer. Combines immersive simulations with LLM-based reasoning analysis to surface cognitive patterns, logical consistency and mindset.",
+    gradient: ["#0F172A", "#1E3A5F"],
+    url: "https://www.inplayai.it/",
+    tech: [],
+    category: "professional",
+  },
+  {
+    name: "SkillMosaico",
+    image: "/timeline/bgartemat.jpg",
+    blurImage: "/projects/blur/crazyStaickers.png",
+    description: "Configurable assessment platform that lets companies compose their ideal candidate profile by selecting competencies from a predefined map. Generates personalised gamified simulation scenarios with interconnected decision-making challenges.",
+    gradient: ["#1E3A5F", "#0F172A"],
+    url: "https://www.skillmosaico.it/",
+    tech: [],
+    category: "professional",
+  },
+  {
+    name: "Abstract Forward",
+    image: "/timeline/bgartemat.jpg",
+    blurImage: "/projects/blur/crazyStaickers.png",
+    description: "Gamified business simulation platform designed for enterprise recruitment and training. Candidates tackle realistic management scenarios that assess both hard and soft skills through engaging, story-driven challenges.",
+    gradient: ["#1E3A5F", "#0F172A"],
+    url: "https://www.artemat.it/",
+    tech: [],
+    category: "professional",
+  },
+  {
+    name: "UMARI",
+    image: "/timeline/bgartemat.jpg",
+    blurImage: "/projects/blur/crazyStaickers.png",
+    description: "Blockchain-based digital passport system for agricultural supply chain traceability. Tracks bioactive phytoextracts from Calabrian agricultural waste through the entire production chain, providing consumers with verified, tamper-proof product data via QR code.",
+    gradient: ["#0D2818", "#1B4332"],
+    url: "https://ecs-nodes.eu/",
+    tech: [],
+    category: "professional",
+  },
+  {
+    name: "VOLTA COHERENT",
+    image: "/timeline/bgartemat.jpg",
+    blurImage: "/projects/blur/crazyStaickers.png",
+    description: "European research project (Fondazione RESTART) developing an AI-assisted intent-mapping system for Digital Twin Networks — automatically translating business intentions into technical network parameters. Awarded IEEE Outstanding Paper Award at PICom 2025.",
+    gradient: ["#2D1B4E", "#4A2C6A"],
+    url: "https://doi.org/10.1109/picom68402.2025.00017",
+    tech: [],
+    category: "professional",
+  },
+  // Academic Projects
   {
     name: "inRuolo",
     image: "/projects/Mockup/classi4.png",
@@ -66,6 +126,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#1F6582", "#1ABCFE"],
     url: "https://github.com/doomL/in-ruolo",
     tech: ["javascript", "cs", "asp","sqlserver"],
+    category: "academic",
   },
   {
     name: "FaceRec",
@@ -75,6 +136,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#172839", "#334659"],
     url: "https://github.com/doomL/faceRecognitionNode",
     tech: ["nodejs", "npm", "javascript"],
+    category: "academic",
   },
   {
     name: "Crazy StAIckers",
@@ -83,7 +145,8 @@ export const PROJECTS: IProject[] = [
     description: "Automatic Crazy Stackers Solver using DLV2.",
     gradient: ["#552A04", "#614023"],
     url: "https://github.com/doomL/Crazy-Stackers-IA",
-    tech: ["java",],
+    tech: ["java"],
+    category: "academic",
   },
   {
     name: "LARA - Arduino Domotic Assistant",
@@ -93,6 +156,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#153BB9", "#0E2C8B"],
     url: "https://github.com/doomL/Arduino-Domotic-Assistant",
     tech: ["androidstudio", "java", "arduino"],
+    category: "academic",
   },
   {
     name: "3D Print Store",
@@ -102,6 +166,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#245B57", "#004741"],
     url: "https://github.com/doomL/3DPrintStore",
     tech: ["java", "jquery", "postgres"],
+    category: "academic",
   },
   {
     name: "FantaSiw",
@@ -111,6 +176,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#3A0000", "#771E1E"],
     url: "https://github.com/doomL/fantasiw-league",
     tech: ["java", "jquery", "postgres"],
+    category: "academic",
   },
   {
     name: "Togheter Hike",
@@ -120,8 +186,8 @@ export const PROJECTS: IProject[] = [
     gradient: ["#003052", "#167187"],
     url: "https://www.figma.com/proto/c9DdmzA4PXwpgS9UWydXSa/Prototyping-in-Figma?node-id=0-78&starting-point-node-id=0%3A2&mode=design&t=jIFe985AK0eV6exj-1",
     tech: ["figma"],
+    category: "academic",
   },
- 
 ];
 
 export const SKILLS = {
@@ -324,6 +390,87 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "2024 – Mar",
+    size: ItemSize.LARGE,
+    shouldDrawLine: false,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "UMARI Project — Artémat S.r.l.",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Developed a blockchain-based digital passport system for agricultural supply chain traceability, in collaboration with MACROFARM and CGF Food, as part of a Calabrian regional innovation initiative.",
+    image: "/timeline/logo_art.svg",
+    slideImage: "/timeline/bgartemat.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "2025 – Oct",
+    size: ItemSize.LARGE,
+    shouldDrawLine: false,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "IEEE Outstanding Paper Award 🏆",
+    size: ItemSize.SMALL,
+    subtitle:
+      "\"AI-assisted Intent-Mapping and translation for Digital Twins Network applications\" — IEEE PICom 2025, Hakodate, Japan. Research conducted within the European VOLTA COHERENT project by Fondazione RESTART, in collaboration with Università della Calabria.",
+    image: "/timeline/logo_art.svg",
+    slideImage: "/timeline/bgartemat.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "2026 – Feb",
+    size: ItemSize.LARGE,
+    shouldDrawLine: false,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "ECAI 2025 Publication",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Co-authored \"LUMI Agents: A Fuzzy BDI Framework for Intelligent Agents\" published on CEUR-WS Vol-4165, 2nd Workshop on Green-Aware AI @ ECAI 2025.",
+    image: "/timeline/unical.png",
+    slideImage: "/timeline/bgunical.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+];
+
+export interface IPublication {
+  title: string;
+  venue: string;
+  award?: string;
+  authors?: string;
+  details?: string;
+  doi?: string;
+  url?: string;
+}
+
+export const PUBLICATIONS: IPublication[] = [
+  {
+    title: "AI-assisted Intent-Mapping and translation for Digital Twins Network applications",
+    venue: "IEEE PICom 2025 · Hakodate, Japan · October 2025",
+    award: "IEEE Outstanding Paper Award",
+    authors: "P. Pace, G. Aloi, A. Iera, A. Mendicelli, P. Guarasci, D. Laurito",
+    doi: "10.1109/picom68402.2025.00017",
+    url: "https://doi.org/10.1109/picom68402.2025.00017",
+  },
+  {
+    title: "LUMI Agents: A Fuzzy BDI Framework for Intelligent Agents",
+    venue: "2nd Workshop on Green-Aware AI @ ECAI 2025 · February 2026",
+    details: "CEUR-WS Vol-4165, pp. 29-37 · CC BY 4.0",
+    url: "https://ceur-ws.org/Vol-4165/short12.pdf",
   },
 ];
 

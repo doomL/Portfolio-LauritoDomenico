@@ -46,8 +46,8 @@ const QuoteSection = () => {
           willChange ? "will-change-opacity" : ""
         }`}
       >
-        In the world of <span className="text-strong font-bold">web development</span>, 
-        I&apos;m deeply dedicated to paying close attention to every detail.
+        In the world of <span className="text-strong font-bold">AI systems and web development</span>, 
+        I&apos;m deeply dedicated to building things that work — and that work well.
       </h1>
     </div>
   );
