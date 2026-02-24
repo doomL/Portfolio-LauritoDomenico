@@ -88,16 +88,6 @@ export const PROJECTS: IProject[] = [
     category: "professional",
   },
   {
-    name: "Abstract Forward",
-    image: "https://www.artemat.it/artematv1/wp-content/uploads/2025/04/logo_art-1.svg",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Gamified business simulations for enterprise recruitment. Realistic scenarios, hard & soft skill assessment.",
-    gradient: ["#1E3A5F", "#0F172A"],
-    url: "https://www.artemat.it/",
-    tech: [],
-    category: "professional",
-  },
-  {
     name: "UMARI",
     image: "/timeline/bgartemat.jpg",
     blurImage: "/projects/blur/crazyStaickers.png",
