@@ -66,10 +66,10 @@ export interface IProject {
 }
 
 export const PROJECTS: IProject[] = [
-  // Professional Work (images from og:image when available)
+  // Professional Work (images from website og:image)
   {
     name: "InPlayAI",
-    image: "/projects/inplayai-og.svg",
+    image: "https://www.inplayai.it/inplayai/wp-content/uploads/2025/10/logoORIZZ-1.svg",
     blurImage: "/projects/blur/crazyStaickers.png",
     description: "AI-powered HR assessment. LLM-based analysis of how candidates think, not just what they answer.",
     gradient: ["#0F172A", "#1E3A5F"],
@@ -79,7 +79,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "SkillMosaico",
-    image: "/projects/skillmosaico-og.svg",
+    image: "https://www.skillmosaico.it/website/wp-content/uploads/2025/09/logo_col_orizz_byArt.svg",
     blurImage: "/projects/blur/crazyStaickers.png",
     description: "Configurable assessment platform. Build ideal candidate profiles with gamified simulation scenarios.",
     gradient: ["#1E3A5F", "#0F172A"],
@@ -89,7 +89,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "Abstract Forward",
-    image: "/projects/abstractforward-og.svg",
+    image: "https://www.artemat.it/artematv1/wp-content/uploads/2025/04/logo_art-1.svg",
     blurImage: "/projects/blur/crazyStaickers.png",
     description: "Gamified business simulations for enterprise recruitment. Realistic scenarios, hard & soft skill assessment.",
     gradient: ["#1E3A5F", "#0F172A"],

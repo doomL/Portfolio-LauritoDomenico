@@ -2,10 +2,11 @@
 const nextConfig = {
     reactStrictMode: true,
     output: 'export',
-    images:{
+    images: {
         loader: 'akamai',
-        path:'/'
-    }
+        path: '/',
+        domains: ['www.inplayai.it', 'www.skillmosaico.it', 'www.artemat.it'],
+    },
 };
 
 module.exports = nextConfig;
