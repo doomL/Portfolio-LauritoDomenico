@@ -469,17 +469,42 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
       />
       <div className="relative h-full w-full -mt-2">
         <div className="absolute top-0 left-0 h-full w-full">
-          {svgCheckpointItems.map((item, index) => (
-            <Image
-              className={`w-full absolute top-0 object-cover slide-${
-                index + 1
-              }`}
-              src={(item as CheckpointNode).slideImage || ""}
-              key={`${(item as CheckpointNode).title}-${index}`}
-              alt="Timeline"
-              layout="fill"
-            />
-          ))}
+          {svgCheckpointItems.map((item, index) => {
+            const node = item as CheckpointNode;
+            const hasLogo = node.image;
+            return (
+              <div
+                key={`${node.title}-${index}`}
+                className={`absolute top-0 left-0 h-full w-full slide-${index + 1}`}
+              >
+                {hasLogo ? (
+                  <>
+                    <div
+                      className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+                      aria-hidden
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center p-8">
+                      <div className="relative w-40 h-24 md:w-48 md:h-28">
+                        <Image
+                          src={node.image!}
+                          alt={node.title}
+                          layout="fill"
+                          className="object-contain"
+                        />
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <Image
+                    className="w-full h-full object-cover"
+                    src={node.slideImage || ""}
+                    alt=""
+                    layout="fill"
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -336,7 +336,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     subtitle:
       "Implementation of some functions for a banking web application using Quarkus, Kafka, gRPC, and MongoDB technologies.",
     image: "/timeline/exabit.png",
-    slideImage: "/timeline/bgd.jpg",
+    slideImage: "/timeline/bgexabit.jpg",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
