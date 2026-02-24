@@ -1,6 +1,6 @@
  
 
-import { EMAIL, MENULINKS, SOCIAL_LINKS } from "../../constants";
+import { MENULINKS, SOCIAL_LINKS } from "../../constants";
 import Image from "next/image";
 import Button, { ButtonTypes } from "./button";
 
@@ -53,14 +53,14 @@ const Footer = () => {
     </>
   );
 
-  const { ref: footerRef } = MENULINKS[4];
+  const { ref: footerRef } = MENULINKS.find((l) => l.ref === "contact") ?? MENULINKS[MENULINKS.length - 1];
 
   return (
     <footer
       className="w-full relative select-none bg-cover flex flex-col items-stretch"
       id={footerRef}
     >
-      <img
+      <Image
         src="/footer-curve.svg"
         alt="Footer"
         className="w-full"

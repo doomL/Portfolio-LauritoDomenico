@@ -159,16 +159,16 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     const foreignObjectY = y - dotSize / 2;
     const foreignObjectWidth = svgWidth - (dotSize / 2 + 10 + offset);
 
-    const titleSizeClass = size === ItemSize.LARGE ? "text-6xl" : "text-2xl";
+    const titleSizeClass = size === ItemSize.LARGE ? "text-4xl" : "text-2xl";
     const logoString = image
-      ? `<img src='${image}' class='h-8 mb-2' loading='lazy' width='100' height='32' alt='${image}' />`
+      ? `<img src='${image}' class='mb-2' style='height:32px;width:auto;max-width:300px;object-fit:contain' loading='lazy' alt='${image}' />`
       : "";
     const subtitleString = subtitle
-      ? `<p class='text-xl mt-2 text-gray-200 font-medium tracking-wide'>${subtitle}</p>`
+      ? `<p class='text-base mt-2 text-gray-200 font-medium tracking-wide'>${subtitle}</p>`
       : "";
 
     return `<foreignObject x=${foreignObjectX} y=${foreignObjectY} width=${foreignObjectWidth} 
-        height=${separation}>${logoString}<p class='${titleSizeClass}'>${title}</p>${subtitleString}</foreignObject>`;
+        height=${separation} style="overflow:hidden">${logoString}<p class='${titleSizeClass}'>${title}</p>${subtitleString}</foreignObject>`;
   };
 
   const drawLine = (
@@ -443,6 +443,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
 
     // Animation for Timeline SVG
     animateTimeline(timeline, duration);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     timelineSvg,
     svgContainer,
@@ -468,17 +469,42 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
       />
       <div className="relative h-full w-full -mt-2">
         <div className="absolute top-0 left-0 h-full w-full">
-          {svgCheckpointItems.map((item, index) => (
-            <Image
-              className={`w-full absolute top-0 object-cover slide-${
-                index + 1
-              }`}
-              src={(item as CheckpointNode).slideImage || ""}
-              key={`${(item as CheckpointNode).title}-${index}`}
-              alt="Timeline"
-              layout="fill"
-            />
-          ))}
+          {svgCheckpointItems.map((item, index) => {
+            const node = item as CheckpointNode;
+            const hasLogo = node.image;
+            return (
+              <div
+                key={`${node.title}-${index}`}
+                className={`absolute top-0 left-0 h-full w-full slide-${index + 1}`}
+              >
+                {hasLogo ? (
+                  <>
+                    <div
+                      className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+                      aria-hidden
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center p-6">
+                      <div className="relative w-56 h-36 md:w-80 md:h-52">
+                        <Image
+                          src={node.image!}
+                          alt={node.title}
+                          layout="fill"
+                          className="object-contain"
+                        />
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <Image
+                    className="w-full h-full object-cover"
+                    src={node.slideImage || ""}
+                    alt=""
+                    layout="fill"
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
@@ -507,7 +533,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
   return (
     <section
       className="w-full relative select-none min-h-screen section-container py-8 flex flex-col justify-center"
-      id={MENULINKS[3].ref}
+      id={MENULINKS.find((l) => l.ref === "timeline")?.ref ?? "timeline"}
     >
       {renderSectionTitle()}
       <div className="grid grid-cols-12 gap-4 mt-20">

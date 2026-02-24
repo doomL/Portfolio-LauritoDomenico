@@ -96,12 +96,13 @@ const ProjectTile = ({
     name: string
   ): React.ReactNode => (
     <Image
-      placeholder="blur"
-      blurDataURL={blurImage}
+      placeholder={image.startsWith("http") ? "empty" : "blur"}
+      blurDataURL={image.startsWith("http") ? undefined : blurImage}
       src={image}
       alt={name}
       layout="fill"
       className={`${styles.ProjectImg} z-0`}
+      unoptimized={image.startsWith("http")}
     />
   );
 
@@ -138,7 +139,7 @@ const ProjectTile = ({
         {renderProjectImage(image, blurImage, name)}
         {renderTopBottomGradient(stop1)}
         {renderProjectName(name)}
-        {renderTechIcons(tech)}
+        {tech.length > 0 && renderTechIcons(tech)}
         {renderDescription(description)}
       </div>
     </a>

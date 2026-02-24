@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    distDir: 'dist',
     output: 'export',
-    images:{
+    images: {
         loader: 'akamai',
-        path:'/'
-    }
+        path: '/',
+        domains: ['www.inplayai.it', 'www.skillmosaico.it'],
+    },
 };
 
 module.exports = nextConfig;

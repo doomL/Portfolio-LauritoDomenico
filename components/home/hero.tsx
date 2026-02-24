@@ -1,6 +1,6 @@
  
 
-import { EMAIL, MENULINKS, SOCIAL_LINKS, TYPED_STRINGS } from "../../constants";
+import { HERO_BIO, MENULINKS, SOCIAL_LINKS, TYPED_STRINGS } from "../../constants";
 import React, { MutableRefObject, useEffect, useRef } from "react";
 import Typed from "typed.js";
 import Image from "next/image";
@@ -81,6 +81,9 @@ const HeroSection = React.memo(() => {
         <h2 className="text-4xl seq">Hello 👋🏻</h2>
         <h1 className="text-3xl seq">I am Domenico Laurito</h1>
       </div>
+      <p className="text-base md:text-lg text-gray-300 seq mb-2 max-w-xl">
+        {HERO_BIO}
+      </p>
       <p className="mb-4">
         <span className={HERO_STYLES.TYPED_SPAN} ref={typedSpanElement}></span>
       </p>

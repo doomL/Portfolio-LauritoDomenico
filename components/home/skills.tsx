@@ -49,7 +49,9 @@ const SkillsSection = () => {
       <p className="section-title-sm seq">SKILLS</p>
       <h1 className="section-heading seq mt-2">My Skills</h1>
       <h2 className="text-2xl md:max-w-2xl w-full seq mt-2">
-      I embrace the role of crafting visually appealing user experience by employing modern front-end architecture while managing the entire web development stack. {" "}
+        I embrace the role of crafting visually appealing user experience by
+        employing modern front-end architecture while managing the entire web
+        development stack — from AI systems to traditional full-stack.
       </h2>
     </div>
   );
@@ -107,7 +109,7 @@ const SkillsSection = () => {
       {renderBackgroundPattern()}
       <div
         className={SKILL_STYLES.SECTION}
-        id={MENULINKS[2].ref}
+        id={MENULINKS.find((l) => l.ref === "skills")?.ref ?? "skills"}
         ref={targetSection}
       >
         <div className="flex flex-col skills-wrapper">
@@ -115,7 +117,7 @@ const SkillsSection = () => {
           { <div className="mt-10">
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Back-end Development</h3>
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=spring,dotnet,java,python,nodejs,cs,flask,express" />
+            <img src="https://skillicons.dev/icons?i=spring,dotnet,java,python,nodejs,cs,flask,express,fastapi" />
           </a>
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Front-end Development</h3>
@@ -125,12 +127,12 @@ const SkillsSection = () => {
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Databases</h3>
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb" />
+            <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,redis" />
           </a>
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Others</h3>
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=cpp,git,nginx,solidity,androidstudio,kubernetes,docker,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton" />
+            <img src="https://skillicons.dev/icons?i=cpp,git,nginx,solidity,androidstudio,kubernetes,docker,vercel,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton" />
           </a>
             {/* {renderSkillColumn("BACKEND DEVELOPMENT", SKILLS.backend)}
             {renderSkillColumn("FRONTEND DEVELOPMENT", SKILLS.frontend)}

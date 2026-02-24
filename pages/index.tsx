@@ -13,6 +13,7 @@ import ProgressIndicator from "@/components/common/progress-indicator";
 import Cursor from "@/components/common/cursor";
 import HeroSection from "@/components/home/hero";
 import ProjectsSection from "@/components/home/projects";
+import PublicationsSection from "@/components/home/publications";
 import QuoteSection from "@/components/home/quote";
 import SkillsSection from "@/components/home/skills";
 import CollaborationSection from "@/components/home/collaboration";
@@ -36,12 +37,11 @@ export default function Home() {
   gsap.config({ nullTargetWarn: false });
 
   const [isDesktop, setisDesktop] = useState(true);
+  const timerRef = React.useRef<NodeJS.Timeout | null>(null);
 
-  let timer: NodeJS.Timeout = null;
-
-  const debouncedDimensionCalculator = () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
+  const debouncedDimensionCalculator = React.useCallback(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => {
       const isDesktopResult =
         typeof window.orientation === "undefined" &&
         navigator.userAgent.indexOf("IEMobile") === -1;
@@ -50,7 +50,7 @@ export default function Home() {
 
       setisDesktop(isDesktopResult);
     }, DEBOUNCE_TIME);
-  };
+  }, []);
 
   useEffect(() => {
     debouncedDimensionCalculator();
@@ -58,7 +58,7 @@ export default function Home() {
     window.addEventListener("resize", debouncedDimensionCalculator);
     return () =>
       window.removeEventListener("resize", debouncedDimensionCalculator);
-  }, [timer]);
+  }, [debouncedDimensionCalculator]);
 
   const renderBackdrop = (): React.ReactNode => (
     <div className="fixed top-0 left-0 h-screen w-screen bg-gray-900 -z-1"></div>
@@ -78,6 +78,7 @@ export default function Home() {
           <HeroSection />
           <AboutSection />
           <ProjectsSection isDesktop={isDesktop} />
+          <PublicationsSection />
           <QuoteSection />
           <SkillsSection />
           <TimelineSection isDesktop={isDesktop} />

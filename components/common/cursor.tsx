@@ -67,6 +67,7 @@ const Cursor = ({ isDesktop }: IDesktop) => {
     if (isDesktop && !isSmallScreen()) {
       initCursorAnimation();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cursor, follower, isDesktop]);
 
   return (

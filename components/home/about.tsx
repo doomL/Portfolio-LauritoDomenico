@@ -65,15 +65,16 @@ const AboutSection = () => {
           willChange ? "will-change-opacity" : ""
         }`}
       >
-         I have a passion for creating web applications and software that seamlessly integrate both front-end and back-end components.{" "}
+        I design and build AI-powered systems and web platforms that bridge
+        intelligent backends with polished user experiences.{" "}
       </span>
       <span
         className={`about-2 leading-tight ${
           willChange ? "will-change-opacity" : ""
         }`}
       >
-        I take responsibility to craft a good user experience using modern
-        frontend architecture.
+        I bring the same attention to detail whether I&apos;m engineering an LLM
+        evaluation pipeline or crafting a frontend interface.
       </span>
     </h1>
   );

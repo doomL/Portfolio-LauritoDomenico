@@ -127,8 +127,8 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       <p className="section-title-sm seq">PROJECTS</p>
       <h1 className="section-heading seq mt-2">My Works</h1>
       <h2 className="text-2xl md:max-w-3xl w-full seq max-w-sm mt-2">
-        I have contributed in over 10+ projects ranging from Frontend
-        development, UI/UX design, Backend development, and Android Development
+        From AI systems and HR tech platforms to academic projects — frontend,
+        backend, and Android development
       </h2>
     </div>
   );
@@ -139,7 +139,7 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
         project={project}
         key={project.name}
         animationEnabled={horizontalAnimationEnabled}
-      ></ProjectTile>
+      />
     ));
 
   const { ref: projectsSectionRef } = MENULINKS[1];
