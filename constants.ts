@@ -231,7 +231,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "Scientific High School Degree",
     size: ItemSize.SMALL,
     subtitle:"High School Diploma at Liceo Scientifico \"E. Mattei\" in Castrovillari (CS)",
-    // image: "/timeline/xda.svg",
+    image: "/logo.svg",
     slideImage: "/timeline/bg.jpg",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
@@ -365,7 +365,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     size: ItemSize.SMALL,
     subtitle:
       "Worked As a Freelancer website developer,SEO Engineer, photographer, video maker, music Producer, Sound Engineer. ",
-    // image: "/timeline/hotstar.svg",
+    image: "/logo.svg",
     slideImage: "/timeline/bgd.jpg",
     shouldDrawLine: true,
     alignment: Branch.LEFT,

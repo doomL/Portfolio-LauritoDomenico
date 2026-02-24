@@ -483,8 +483,8 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
                       className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
                       aria-hidden
                     />
-                    <div className="absolute inset-0 flex items-center justify-center p-8">
-                      <div className="relative w-40 h-24 md:w-48 md:h-28">
+                    <div className="absolute inset-0 flex items-center justify-center p-6">
+                      <div className="relative w-56 h-36 md:w-80 md:h-52">
                         <Image
                           src={node.image!}
                           alt={node.title}
