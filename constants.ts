@@ -89,7 +89,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "Abstract Forward",
-    image: "/timeline/bgexabit.jpg",
+    image: "/timeline/bgartemat.jpg",
     blurImage: "/projects/blur/crazyStaickers.png",
     description: "Gamified business simulations for enterprise recruitment. Realistic scenarios, hard & soft skill assessment.",
     gradient: ["#1E3A5F", "#0F172A"],
@@ -99,7 +99,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "UMARI",
-    image: "/timeline/bgazlaurito.jpg",
+    image: "/timeline/bgartemat.jpg",
     blurImage: "/projects/blur/crazyStaickers.png",
     description: "Blockchain digital passport for agricultural traceability. Verified product data via QR code.",
     gradient: ["#0D2818", "#1B4332"],
@@ -109,7 +109,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "VOLTA COHERENT",
-    image: "/timeline/bgunical.jpg",
+    image: "/timeline/bgartemat.jpg",
     blurImage: "/projects/blur/crazyStaickers.png",
     description: "AI-assisted intent-mapping for Digital Twin Networks. IEEE Outstanding Paper Award @ PICom 2025.",
     gradient: ["#2D1B4E", "#4A2C6A"],
@@ -405,7 +405,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     subtitle:
       "Blockchain-based digital passport for agricultural traceability. Artemat + MACROFARM + CGF Food.",
     image: "/timeline/logo_art.svg",
-    slideImage: "/timeline/bgazlaurito.jpg",
+    slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
@@ -423,7 +423,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     subtitle:
       "AI-assisted Intent-Mapping for Digital Twin Networks — IEEE PICom 2025, Japan. VOLTA COHERENT project.",
     image: "/timeline/logo_art.svg",
-    slideImage: "/timeline/bgunical.jpg",
+    slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
@@ -441,7 +441,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     subtitle:
       "LUMI Agents: A Fuzzy BDI Framework for Intelligent Agents — CEUR-WS Vol-4165, ECAI 2025.",
     image: "/timeline/unical.png",
-    slideImage: "/timeline/laurea.jpg",
+    slideImage: "/timeline/bgunical.jpg",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
