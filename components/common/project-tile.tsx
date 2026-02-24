@@ -96,12 +96,13 @@ const ProjectTile = ({
     name: string
   ): React.ReactNode => (
     <Image
-      placeholder="blur"
-      blurDataURL={blurImage}
+      placeholder={image.startsWith("http") ? "empty" : "blur"}
+      blurDataURL={image.startsWith("http") ? undefined : blurImage}
       src={image}
       alt={name}
       layout="fill"
       className={`${styles.ProjectImg} z-0`}
+      unoptimized={image.startsWith("http")}
     />
   );
 

@@ -88,6 +88,16 @@ export const PROJECTS: IProject[] = [
     category: "professional",
   },
   {
+    name: "inRuolo",
+    image: "/projects/Mockup/classi4.png",
+    blurImage: "/projects/blur/Mockup/classi4.png",
+    description: "Web platform for aspiring teachers.",
+    gradient: ["#1F6582", "#1ABCFE"],
+    url: "https://github.com/doomL/in-ruolo",
+    tech: ["javascript", "cs", "asp","sqlserver"],
+    category: "professional",
+  },
+  {
     name: "UMARI",
     image: "/timeline/bgartemat.jpg",
     blurImage: "/projects/blur/crazyStaickers.png",
@@ -108,16 +118,6 @@ export const PROJECTS: IProject[] = [
     category: "professional",
   },
   // Academic Projects
-  {
-    name: "inRuolo",
-    image: "/projects/Mockup/classi4.png",
-    blurImage: "/projects/blur/Mockup/classi4.png",
-    description: "Web platform for aspiring teachers.",
-    gradient: ["#1F6582", "#1ABCFE"],
-    url: "https://github.com/doomL/in-ruolo",
-    tech: ["javascript", "cs", "asp","sqlserver"],
-    category: "academic",
-  },
   {
     name: "FaceRec",
     image: "/projects/faceRec.png",
