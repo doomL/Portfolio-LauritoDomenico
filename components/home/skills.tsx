@@ -117,7 +117,7 @@ const SkillsSection = () => {
           { <div className="mt-10">
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Back-end Development</h3>
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=spring,dotnet,java,python,nodejs,cs,flask,express" />
+            <img src="https://skillicons.dev/icons?i=spring,dotnet,java,python,nodejs,cs,flask,express,fastapi" />
           </a>
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Front-end Development</h3>
@@ -132,7 +132,7 @@ const SkillsSection = () => {
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Others</h3>
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=cpp,git,nginx,solidity,androidstudio,kubernetes,docker,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton" />
+            <img src="https://skillicons.dev/icons?i=cpp,git,nginx,solidity,androidstudio,kubernetes,docker,vercel,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton" />
           </a>
             {/* {renderSkillColumn("BACKEND DEVELOPMENT", SKILLS.backend)}
             {renderSkillColumn("FRONTEND DEVELOPMENT", SKILLS.frontend)}
