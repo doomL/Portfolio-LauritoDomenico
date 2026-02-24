@@ -49,7 +49,9 @@ const SkillsSection = () => {
       <p className="section-title-sm seq">SKILLS</p>
       <h1 className="section-heading seq mt-2">My Skills</h1>
       <h2 className="text-2xl md:max-w-2xl w-full seq mt-2">
-      I embrace the role of crafting visually appealing user experience by employing modern front-end architecture while managing the entire web development stack. {" "}
+        I embrace the role of crafting visually appealing user experience by
+        employing modern front-end architecture while managing the entire web
+        development stack — from AI systems to traditional full-stack.
       </h2>
     </div>
   );
@@ -107,7 +109,7 @@ const SkillsSection = () => {
       {renderBackgroundPattern()}
       <div
         className={SKILL_STYLES.SECTION}
-        id={MENULINKS[2].ref}
+        id={MENULINKS.find((l) => l.ref === "skills")?.ref ?? "skills"}
         ref={targetSection}
       >
         <div className="flex flex-col skills-wrapper">
@@ -119,19 +121,34 @@ const SkillsSection = () => {
           </a>
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Front-end Development</h3>
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=react,tailwind,nextjs,angular,jquery,js,css,bootstrap,html,figma" />
-          </a>
+          <div className="flex flex-wrap items-center gap-2">
+            <a href="https://skillicons.dev">
+              <img src="https://skillicons.dev/icons?i=react,tailwind,nextjs,angular,jquery,js,css,bootstrap,html,figma" />
+            </a>
+            <span className="text-sm px-2 py-1 rounded bg-gray-800 text-gray-300 seq">
+              PrimeNG
+            </span>
+          </div>
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Databases</h3>
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb" />
-          </a>
+          <div className="flex flex-wrap items-center gap-2">
+            <a href="https://skillicons.dev">
+              <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,redis" />
+            </a>
+            <span className="text-sm px-2 py-1 rounded bg-gray-800 text-gray-300 seq">
+              Qdrant
+            </span>
+          </div>
           <br />
           <h3 className={SKILL_STYLES.SKILL_TITLE}>Others</h3>
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=cpp,git,nginx,solidity,androidstudio,kubernetes,docker,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton" />
-          </a>
+          <div className="flex flex-wrap items-center gap-2">
+            <a href="https://skillicons.dev">
+              <img src="https://skillicons.dev/icons?i=cpp,git,nginx,solidity,androidstudio,kubernetes,docker,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton" />
+            </a>
+            <span className="text-sm px-2 py-1 rounded bg-gray-800 text-gray-300 seq">
+              OpenRouter
+            </span>
+          </div>
             {/* {renderSkillColumn("BACKEND DEVELOPMENT", SKILLS.backend)}
             {renderSkillColumn("FRONTEND DEVELOPMENT", SKILLS.frontend)}
             {renderSkillColumn("Other Skills", SKILLS.other)} */}
