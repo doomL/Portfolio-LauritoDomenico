@@ -138,7 +138,7 @@ const ProjectTile = ({
         {renderProjectImage(image, blurImage, name)}
         {renderTopBottomGradient(stop1)}
         {renderProjectName(name)}
-        {renderTechIcons(tech)}
+        {tech.length > 0 && renderTechIcons(tech)}
         {renderDescription(description)}
       </div>
     </a>

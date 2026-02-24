@@ -127,20 +127,49 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       <p className="section-title-sm seq">PROJECTS</p>
       <h1 className="section-heading seq mt-2">My Works</h1>
       <h2 className="text-2xl md:max-w-3xl w-full seq max-w-sm mt-2">
-        I have contributed in over 10+ projects ranging from Frontend
-        development, UI/UX design, Backend development, and Android Development
+        Professional work in AI systems, HR tech platforms, and research — plus
+        academic projects spanning frontend, backend, and Android development
       </h2>
     </div>
   );
 
-  const renderProjectTiles = (): React.ReactNode =>
-    PROJECTS.map((project) => (
-      <ProjectTile
-        project={project}
-        key={project.name}
-        animationEnabled={horizontalAnimationEnabled}
-      ></ProjectTile>
-    ));
+  const professionalProjects = PROJECTS.filter(
+    (p) => p.category === "professional"
+  );
+  const academicProjects = PROJECTS.filter((p) => p.category === "academic");
+
+  const renderProjectTiles = (): React.ReactNode => (
+    <>
+      {professionalProjects.length > 0 && (
+        <>
+          <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider seq flex-shrink-0 self-center px-4 py-2 rounded-lg bg-gray-800/50">
+            Professional Work
+          </div>
+          {professionalProjects.map((project) => (
+            <ProjectTile
+              project={project}
+              key={project.name}
+              animationEnabled={horizontalAnimationEnabled}
+            />
+          ))}
+        </>
+      )}
+      {academicProjects.length > 0 && (
+        <>
+          <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider seq flex-shrink-0 self-center px-4 py-2 rounded-lg bg-gray-800/50">
+            Academic Projects
+          </div>
+          {academicProjects.map((project) => (
+            <ProjectTile
+              project={project}
+              key={project.name}
+              animationEnabled={horizontalAnimationEnabled}
+            />
+          ))}
+        </>
+      )}
+    </>
+  );
 
   const { ref: projectsSectionRef } = MENULINKS[1];
 
