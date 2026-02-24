@@ -161,7 +161,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
 
     const titleSizeClass = size === ItemSize.LARGE ? "text-4xl" : "text-2xl";
     const logoString = image
-      ? `<img src='${image}' class='mb-2' style='height:32px;width:auto;max-width:100px;object-fit:contain' loading='lazy' alt='${image}' />`
+      ? `<img src='${image}' class='mb-2' style='height:32px;width:auto;max-width:300px;object-fit:contain' loading='lazy' alt='${image}' />`
       : "";
     const subtitleString = subtitle
       ? `<p class='text-base mt-2 text-gray-200 font-medium tracking-wide'>${subtitle}</p>`
