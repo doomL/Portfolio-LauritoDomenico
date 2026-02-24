@@ -42,7 +42,7 @@ export const TYPED_STRINGS = [
 ];
 
 export const HERO_BIO =
-  "Full Stack Developer & AI Systems Engineer. 2 publications, IEEE Outstanding Paper Award @ PICom 2025.";
+  "Full Stack Developer & AI Systems Engineer.";
 
 export const EMAIL = "laurito.dom@gmail.com";
 
