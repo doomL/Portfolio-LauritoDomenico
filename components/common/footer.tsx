@@ -53,7 +53,7 @@ const Footer = () => {
     </>
   );
 
-  const { ref: footerRef } = MENULINKS[4];
+  const { ref: footerRef } = MENULINKS.find((l) => l.ref === "contact") ?? MENULINKS[MENULINKS.length - 1];
 
   return (
     <footer
