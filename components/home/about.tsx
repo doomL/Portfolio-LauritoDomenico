@@ -98,18 +98,18 @@ const AboutSection = () => {
   const renderEmployerLink = () => (
     <a
       href={ARTEMAT_EMPLOYER.url}
-      className="link text-amber-300 hover:text-amber-200 inline-flex items-center gap-2 align-middle"
+      className="link inline-flex items-center align-middle hover:opacity-90 transition-opacity"
       target="_blank"
       rel="noreferrer"
+      aria-label={ARTEMAT_EMPLOYER.name}
     >
       <Image
         src={ARTEMAT_EMPLOYER.logo}
-        alt=""
-        width={88}
-        height={28}
-        className="h-5 w-auto inline-block"
+        alt={ARTEMAT_EMPLOYER.name}
+        width={100}
+        height={32}
+        className="h-6 w-auto inline-block"
       />
-      <span>{ARTEMAT_EMPLOYER.name}</span>
     </a>
   );
 
