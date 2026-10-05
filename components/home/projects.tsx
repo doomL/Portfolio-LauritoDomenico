@@ -1,7 +1,7 @@
  
 
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
-import { MENULINKS, PROJECTS } from "../../constants";
+import { DOOGMA_LABS_URL, MENULINKS, PROJECTS, SOCIAL_LINKS } from "../../constants";
 import ProjectTile from "../common/project-tile";
 import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -125,10 +125,27 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       ref={sectionTitleElementRef}
     >
       <p className="section-title-sm seq">PROJECTS</p>
-      <h1 className="section-heading seq mt-2">My Works</h1>
+      <h1 className="section-heading seq mt-2">Selected work</h1>
       <h2 className="text-2xl md:max-w-3xl w-full seq max-w-sm mt-2">
-        From AI systems and HR tech platforms to academic projects — frontend,
-        backend, and Android development
+        HR and AI products I help ship, plus a few flagship builds from{" "}
+        <a
+          href={DOOGMA_LABS_URL}
+          className="link text-amber-300 hover:text-amber-200"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Doogma Labs
+        </a>
+        . More sites, apps, and games live there — older and experimental code on{" "}
+        <a
+          href={SOCIAL_LINKS.github}
+          className="link text-amber-300 hover:text-amber-200"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+        .
       </h2>
     </div>
   );

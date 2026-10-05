@@ -20,6 +20,7 @@ const ProjectTile = ({
     image,
     blurImage,
     description,
+    imageStyle,
     gradient: [stop1, stop2],
   } = project;
 
@@ -91,8 +92,9 @@ const ProjectTile = ({
   );
 
   const isRemoteAsset = image.startsWith("http");
-  const isLogoAsset =
-    isRemoteAsset || image.endsWith(".svg") || image.includes("logo");
+  const resolvedImageStyle =
+    imageStyle ?? (image.endsWith(".svg") ? "logo" : "screenshot");
+  const isLogoAsset = resolvedImageStyle === "logo";
 
   const renderProjectImage = (
     image: string,

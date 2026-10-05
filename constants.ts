@@ -54,6 +54,10 @@ export const SOCIAL_LINKS = {
   mail: "mailto:laurito.dom@gmail.com"
 };
 
+export const DOOGMA_LABS_URL = "https://doogmalabs.com/#progetti";
+
+export type ProjectImageStyle = "logo" | "screenshot";
+
 export interface IProject {
   name: string;
   image: string;
@@ -62,133 +66,81 @@ export interface IProject {
   gradient: [string, string];
   url: string;
   tech: string[];
-  category?: "professional" | "academic";
+  imageStyle?: ProjectImageStyle;
 }
 
+const DOOGMA_SHOT = (file: string) =>
+  `https://doogmalabs.com/assets/shots/${file}`;
+
+/** Curated highlights — full catalog on Doogma Labs; older repos on GitHub. */
 export const PROJECTS: IProject[] = [
-  // Professional Work (images from website og:image)
   {
     name: "InPlayAI",
-    image: "https://www.inplayai.it/inplayai/wp-content/uploads/2025/10/logoORIZZ-1.svg",
+    image:
+      "https://www.inplayai.it/inplayai/wp-content/uploads/2025/10/logoORIZZ-1.svg",
     blurImage: "/projects/blur/crazyStaickers.png",
-    description: "AI-powered HR assessment. LLM-based analysis of how candidates think, not just what they answer.",
+    description:
+      "AI-powered HR assessment. LLM-based analysis of how candidates think, not just what they answer.",
     gradient: ["#0F172A", "#1E3A5F"],
     url: "https://www.inplayai.it/",
     tech: ["react", "next", "nodejs", "typescript"],
-    category: "professional",
+    imageStyle: "logo",
   },
   {
     name: "SkillMosaico",
-    image: "https://www.skillmosaico.it/website/wp-content/uploads/2025/09/logo_col_orizz_byArt.svg",
+    image:
+      "https://www.skillmosaico.it/website/wp-content/uploads/2025/09/logo_col_orizz_byArt.svg",
     blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Configurable assessment platform. Build ideal candidate profiles with gamified simulation scenarios.",
+    description:
+      "Configurable assessment platform. Build ideal candidate profiles with gamified simulation scenarios.",
     gradient: ["#2E6B6B", "#1A5252"],
     url: "https://www.skillmosaico.it/",
     tech: ["react", "next", "tailwind", "typescript"],
-    category: "professional",
+    imageStyle: "logo",
   },
   {
-    name: "Abstract Forward",
-    image:
-      "https://www.artemat.it/artematv1/wp-content/uploads/2025/04/logo_art-1.svg",
+    name: "OpenRouter Studio",
+    image: DOOGMA_SHOT("openrouterstudio.webp"),
     blurImage: "/projects/blur/crazyStaickers.png",
     description:
-      "Artémat corporate site and product presence — design and full-stack delivery for research-driven software.",
-    gradient: ["#1a1a2e", "#16213e"],
-    url: "https://www.artemat.it/",
-    tech: ["react", "next", "nodejs", "angular"],
-    category: "professional",
+      "Visual builder for AI workflows — text, images, and video by connecting blocks and models.",
+    gradient: ["#1e1b4b", "#312e81"],
+    url: "https://openrouterstudio.lauritodomenico.com/",
+    tech: ["react", "next", "typescript"],
+    imageStyle: "screenshot",
   },
   {
-    name: "UMARI",
-    image: "/timeline/bgartemat.jpg",
+    name: "Nimbus",
+    image: DOOGMA_SHOT("nimbus.webp"),
     blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Blockchain digital passport for agricultural traceability. Verified product data via QR code.",
-    gradient: ["#0D2818", "#1B4332"],
-    url: "https://www.airi.it/umari-usare-matrici-agroalimentari-di-scarto-per-riciclarle-in-ingredienti-funzionali/",
-    tech: ["nodejs", "javascript"],
-    category: "professional",
+    description:
+      "Semantic photo search — describe a scene in words and find matching shots in your library.",
+    gradient: ["#0c4a6e", "#0369a1"],
+    url: "https://nimbus.lauritodomenico.com/",
+    tech: ["react", "next", "nodejs"],
+    imageStyle: "screenshot",
   },
   {
-    name: "VOLTA COHERENT",
-    image: "/timeline/bgartemat.jpg",
+    name: "Cervellone",
+    image: DOOGMA_SHOT("cervellone.webp"),
     blurImage: "/projects/blur/crazyStaickers.png",
-    description: "AI-assisted intent-mapping for Digital Twin Networks. IEEE Outstanding Paper Award @ PICom 2025.",
-    gradient: ["#2D1B4E", "#4A2C6A"],
-    url: "https://doi.org/10.1109/picom68402.2025.00017",
-    tech: ["nodejs", "typescript"],
-    category: "professional",
-  },
-  // Academic Projects
-  {
-    name: "inRuolo",
-    image: "/projects/Mockup/classi4.png",
-    blurImage: "/projects/blur/Mockup/classi4.png",
-    description: "Web platform for aspiring teachers.",
-    gradient: ["#1F6582", "#1ABCFE"],
-    url: "https://github.com/doomL/in-ruolo",
-    tech: ["javascript", "cs", "asp", "sqlserver"],
-    category: "academic",
+    description:
+      "Live quiz nights: phones as buzzers, big screen for the room, AI-assisted question generation.",
+    gradient: ["#4a044e", "#86198f"],
+    url: "https://cervellone.doogmalabs.com/",
+    tech: ["react", "next", "nodejs"],
+    imageStyle: "screenshot",
   },
   {
-    name: "FaceRec",
-    image: "/projects/faceRec.png",
+    name: "Doogma Labs",
+    image: DOOGMA_SHOT("chronoclash.webp"),
     blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Surveillance software with face recognition.",
-    gradient: ["#172839", "#334659"],
-    url: "https://github.com/doomL/faceRecognitionNode",
-    tech: ["nodejs", "npm", "javascript"],
-    category: "academic",
-  },
-  {
-    name: "Crazy StAIckers",
-    image: "/projects/crazyStaickers1.png",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Automatic Crazy Stackers Solver using DLV2.",
-    gradient: ["#552A04", "#614023"],
-    url: "https://github.com/doomL/Crazy-Stackers-IA",
-    tech: ["java"],
-    category: "academic",
-  },
-  {
-    name: "LARA - Arduino Domotic Assistant",
-    image: "/projects/lara.png",
-    blurImage: "/projects/blur/lara.jpg",
-    description: "Vocal assistant for domotic house control via Arduino.",
-    gradient: ["#153BB9", "#0E2C8B"],
-    url: "https://github.com/doomL/Arduino-Domotic-Assistant",
-    tech: ["androidstudio", "java", "arduino"],
-    category: "academic",
-  },
-  {
-    name: "3D Print Store",
-    image: "/projects/3dPrintStore.PNG",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Connect users with local 3D printers.",
-    gradient: ["#245B57", "#004741"],
-    url: "https://github.com/doomL/3DPrintStore",
-    tech: ["java", "jquery", "postgres"],
-    category: "academic",
-  },
-  {
-    name: "FantaSiw",
-    image: "/projects/FantaSiw.jpg",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Fantasoccer website for SIW exam @ Unical.",
-    gradient: ["#3A0000", "#771E1E"],
-    url: "https://github.com/doomL/fantasiw-league",
-    tech: ["java", "jquery", "postgres"],
-    category: "academic",
-  },
-  {
-    name: "Together Hike",
-    image: "/projects/togetherHike2.png",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "App to meet and go hiking with people in your area.",
-    gradient: ["#003052", "#167187"],
-    url: "https://www.figma.com/proto/c9DdmzA4PXwpgS9UWydXSa/Prototyping-in-Figma?node-id=0-78&starting-point-node-id=0%3A2&mode=design&t=jIFe985AK0eV6exj-1",
-    tech: ["figma"],
-    category: "academic",
+    description:
+      "Siti, app, giochi e strumenti AI — il catalogo completo con screenshot e link live.",
+    gradient: ["#422006", "#b45309"],
+    url: DOOGMA_LABS_URL,
+    tech: [],
+    imageStyle: "screenshot",
   },
 ];
 
