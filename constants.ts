@@ -114,10 +114,9 @@ export const PERSONAL_WORK_HUBS: IExternalWorkLink[] = [
 export interface ISkillIconRow {
   title: string;
   icons: string;
-  badges?: string[];
 }
 
-/** Skill icon rows (skillicons.dev); badges are text-only when no icon exists in the set. */
+/** Skill icon rows (skillicons.dev). */
 export const SKILL_ICON_ROWS: ISkillIconRow[] = [
   {
     title: "Back-end Development",
@@ -129,14 +128,12 @@ export const SKILL_ICON_ROWS: ISkillIconRow[] = [
   },
   {
     title: "Databases",
-    icons: "mysql,postgres,mongodb,redis",
-    badges: ["Qdrant"],
+    icons: "mysql,postgres,mongodb,redis,qdrant",
   },
   {
     title: "Others",
     icons:
-      "cpp,git,nginx,solidity,androidstudio,kubernetes,docker,vercel,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton",
-    badges: ["OpenRouter"],
+      "cpp,git,nginx,solidity,androidstudio,kubernetes,docker,vercel,openrouter,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton",
   },
 ];
 

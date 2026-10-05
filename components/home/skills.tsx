@@ -12,8 +12,10 @@ const SKILL_STYLES = {
   SKILL_TITLE: "section-title-sm mb-4 seq",
 };
 
-const skillIconUrl = (icons: string) =>
-  `https://skillicons.dev/icons?i=${icons}&perline=12`;
+const skillIconUrl = (icons: string, perLine = 12) =>
+  `https://skillicons.dev/icons?i=${icons}&perline=${perLine}`;
+
+const SKILL_ICON_HEIGHT = "h-12 md:h-[3.25rem]";
 
 const SkillsSection = () => {
   const targetSection: MutableRefObject<HTMLDivElement> = useRef(null);
@@ -82,19 +84,6 @@ const SkillsSection = () => {
     </>
   );
 
-  const renderBadges = (badges: string[]): React.ReactNode => (
-    <div className="flex flex-wrap gap-2 mt-3 seq">
-      {badges.map((label) => (
-        <span
-          key={label}
-          className="px-3 py-1 text-sm font-medium rounded-full bg-gray-800 text-amber-200 border border-gray-600"
-        >
-          {label}
-        </span>
-      ))}
-    </div>
-  );
-
   return (
     <section className="relative">
       {renderBackgroundPattern()}
@@ -110,20 +99,24 @@ const SkillsSection = () => {
               willChange ? "will-change-opacity" : ""
             }`}
           >
-            {SKILL_ICON_ROWS.map((row) => (
-              <div key={row.title} className="seq">
-                <h3 className={SKILL_STYLES.SKILL_TITLE}>{row.title}</h3>
-                <img
-                  src={skillIconUrl(row.icons)}
-                  alt={`${row.title} technologies`}
-                  loading="lazy"
-                  className="max-w-full h-auto"
-                  width={600}
-                  height={120}
-                />
-                {row.badges && row.badges.length > 0 && renderBadges(row.badges)}
-              </div>
-            ))}
+            {SKILL_ICON_ROWS.map((row) => {
+              const iconCount = row.icons.split(",").filter(Boolean).length;
+              const perLine = Math.min(12, Math.max(iconCount, 6));
+
+              return (
+                <div key={row.title} className="seq">
+                  <h3 className={SKILL_STYLES.SKILL_TITLE}>{row.title}</h3>
+                  <img
+                    src={skillIconUrl(row.icons, perLine)}
+                    alt={`${row.title} technologies`}
+                    loading="lazy"
+                    className={`${SKILL_ICON_HEIGHT} w-auto max-w-full object-left object-contain`}
+                    width={iconCount * 52}
+                    height={52}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
