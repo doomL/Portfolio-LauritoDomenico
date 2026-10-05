@@ -90,19 +90,25 @@ const ProjectTile = ({
     </>
   );
 
+  const isRemoteAsset = image.startsWith("http");
+  const isLogoAsset =
+    isRemoteAsset || image.endsWith(".svg") || image.includes("logo");
+
   const renderProjectImage = (
     image: string,
     blurImage: string,
     name: string
   ): React.ReactNode => (
     <Image
-      placeholder={image.startsWith("http") ? "empty" : "blur"}
-      blurDataURL={image.startsWith("http") ? undefined : blurImage}
+      placeholder={isRemoteAsset ? "empty" : "blur"}
+      blurDataURL={isRemoteAsset ? undefined : blurImage}
       src={image}
       alt={name}
       layout="fill"
-      className={`${styles.ProjectImg} z-0`}
-      unoptimized={image.startsWith("http")}
+      className={`${styles.ProjectImg} z-0 ${
+        isLogoAsset ? styles.ProjectImgLogo : ""
+      }`}
+      unoptimized={isRemoteAsset}
     />
   );
 

@@ -33,3 +33,10 @@
 .techIcons {
   transform: rotate(-22.5deg) translateZ(2rem);
 }
+
+.ProjectImgLogo {
+  width: 14rem !important;
+  max-height: 8rem !important;
+  object-fit: contain !important;
+  opacity: 0.95;
+}

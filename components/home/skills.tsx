@@ -1,8 +1,6 @@
-/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
- 
 
-import { MENULINKS, SKILLS } from "../../constants";
+import { MENULINKS, SKILL_ICON_ROWS } from "../../constants";
 import Image from "next/image";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 import { gsap, Linear } from "gsap";
@@ -13,6 +11,9 @@ const SKILL_STYLES = {
     "w-full relative select-none mb-24 section-container py-12 flex flex-col justify-center",
   SKILL_TITLE: "section-title-sm mb-4 seq",
 };
+
+const skillIconUrl = (icons: string) =>
+  `https://skillicons.dev/icons?i=${icons}&perline=12`;
 
 const SkillsSection = () => {
   const targetSection: MutableRefObject<HTMLDivElement> = useRef(null);
@@ -49,9 +50,9 @@ const SkillsSection = () => {
       <p className="section-title-sm seq">SKILLS</p>
       <h1 className="section-heading seq mt-2">My Skills</h1>
       <h2 className="text-2xl md:max-w-2xl w-full seq mt-2">
-        I embrace the role of crafting visually appealing user experience by
-        employing modern front-end architecture while managing the entire web
-        development stack — from AI systems to traditional full-stack.
+        Full-stack delivery from AI backends and LLM integrations to polished
+        React/Next.js interfaces — plus the DevOps and data stores that keep
+        systems running in production.
       </h2>
     </div>
   );
@@ -64,7 +65,8 @@ const SkillsSection = () => {
           loading="lazy"
           height={700}
           width={320}
-          alt="pattern"
+          alt=""
+          role="presentation"
         />
       </div>
       <div className="absolute left-0 -bottom-3.5 w-1/12 max-w-xs md:block hidden">
@@ -73,35 +75,24 @@ const SkillsSection = () => {
           loading="lazy"
           height={335}
           width={140}
-          alt="pattern"
+          alt=""
+          role="presentation"
         />
       </div>
     </>
   );
 
-  const renderSkillColumn = (
-    title: string,
-    skills: string[]
-  ): React.ReactNode => (
-    <>
-      <h3 className={SKILL_STYLES.SKILL_TITLE}>{title}</h3>
-      <div
-        className={`flex flex-wrap seq ${
-          willChange ? "will-change-opacity" : ""
-        }`}
-      >
-        {skills.map((skill) => (
-          <Image
-            key={skill}
-            src={`/skills/${skill}.svg`}
-            alt={skill}
-            width={76}
-            height={76}
-            className="skill"
-          />
-        ))}
-      </div>
-    </>
+  const renderBadges = (badges: string[]): React.ReactNode => (
+    <div className="flex flex-wrap gap-2 mt-3 seq">
+      {badges.map((label) => (
+        <span
+          key={label}
+          className="px-3 py-1 text-sm font-medium rounded-full bg-gray-800 text-amber-200 border border-gray-600"
+        >
+          {label}
+        </span>
+      ))}
+    </div>
   );
 
   return (
@@ -114,32 +105,26 @@ const SkillsSection = () => {
       >
         <div className="flex flex-col skills-wrapper">
           {renderSectionTitle()}
-          { <div className="mt-10">
-          <h3 className={SKILL_STYLES.SKILL_TITLE}>Back-end Development</h3>
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=spring,dotnet,java,python,nodejs,cs,flask,express,fastapi" />
-          </a>
-          <br />
-          <h3 className={SKILL_STYLES.SKILL_TITLE}>Front-end Development</h3>
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=react,tailwind,nextjs,angular,jquery,js,css,bootstrap,html,figma" />
-          </a>
-          <br />
-          <h3 className={SKILL_STYLES.SKILL_TITLE}>Databases</h3>
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,redis" />
-          </a>
-          <br />
-          <h3 className={SKILL_STYLES.SKILL_TITLE}>Others</h3>
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=cpp,git,nginx,solidity,androidstudio,kubernetes,docker,vercel,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton" />
-          </a>
-            {/* {renderSkillColumn("BACKEND DEVELOPMENT", SKILLS.backend)}
-            {renderSkillColumn("FRONTEND DEVELOPMENT", SKILLS.frontend)}
-            {renderSkillColumn("Other Skills", SKILLS.other)} */}
-          </div> 
-          }
-
+          <div
+            className={`mt-10 space-y-8 ${
+              willChange ? "will-change-opacity" : ""
+            }`}
+          >
+            {SKILL_ICON_ROWS.map((row) => (
+              <div key={row.title} className="seq">
+                <h3 className={SKILL_STYLES.SKILL_TITLE}>{row.title}</h3>
+                <img
+                  src={skillIconUrl(row.icons)}
+                  alt={`${row.title} technologies`}
+                  loading="lazy"
+                  className="max-w-full h-auto"
+                  width={600}
+                  height={120}
+                />
+                {row.badges && row.badges.length > 0 && renderBadges(row.badges)}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

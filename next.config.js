@@ -5,7 +5,11 @@ const nextConfig = {
     images: {
         loader: 'akamai',
         path: '/',
-        domains: ['www.inplayai.it', 'www.skillmosaico.it'],
+        domains: [
+            'www.inplayai.it',
+            'www.skillmosaico.it',
+            'www.artemat.it',
+        ],
     },
 };
 

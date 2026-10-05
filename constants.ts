@@ -42,7 +42,7 @@ export const TYPED_STRINGS = [
 ];
 
 export const HERO_BIO =
-  "Full Stack Developer & AI Systems Engineer.";
+  "Full Stack Developer and AI Systems Engineer with a focus on LLM-powered applications, HR tech platforms, and applied research. Co-author of 2 academic publications, including an IEEE Outstanding Paper Award at PICom 2025.";
 
 export const EMAIL = "laurito.dom@gmail.com";
 
@@ -74,7 +74,7 @@ export const PROJECTS: IProject[] = [
     description: "AI-powered HR assessment. LLM-based analysis of how candidates think, not just what they answer.",
     gradient: ["#0F172A", "#1E3A5F"],
     url: "https://www.inplayai.it/",
-    tech: [],
+    tech: ["react", "next", "nodejs", "typescript"],
     category: "professional",
   },
   {
@@ -84,17 +84,19 @@ export const PROJECTS: IProject[] = [
     description: "Configurable assessment platform. Build ideal candidate profiles with gamified simulation scenarios.",
     gradient: ["#2E6B6B", "#1A5252"],
     url: "https://www.skillmosaico.it/",
-    tech: [],
+    tech: ["react", "next", "tailwind", "typescript"],
     category: "professional",
   },
   {
-    name: "inRuolo",
-    image: "/projects/Mockup/classi4.png",
-    blurImage: "/projects/blur/Mockup/classi4.png",
-    description: "Web platform for aspiring teachers.",
-    gradient: ["#1F6582", "#1ABCFE"],
-    url: "https://github.com/doomL/in-ruolo",
-    tech: ["javascript", "cs", "asp","sqlserver"],
+    name: "Abstract Forward",
+    image:
+      "https://www.artemat.it/artematv1/wp-content/uploads/2025/04/logo_art-1.svg",
+    blurImage: "/projects/blur/crazyStaickers.png",
+    description:
+      "Artémat corporate site and product presence — design and full-stack delivery for research-driven software.",
+    gradient: ["#1a1a2e", "#16213e"],
+    url: "https://www.artemat.it/",
+    tech: ["react", "next", "nodejs", "angular"],
     category: "professional",
   },
   {
@@ -104,7 +106,7 @@ export const PROJECTS: IProject[] = [
     description: "Blockchain digital passport for agricultural traceability. Verified product data via QR code.",
     gradient: ["#0D2818", "#1B4332"],
     url: "https://www.airi.it/umari-usare-matrici-agroalimentari-di-scarto-per-riciclarle-in-ingredienti-funzionali/",
-    tech: [],
+    tech: ["nodejs", "javascript"],
     category: "professional",
   },
   {
@@ -113,11 +115,21 @@ export const PROJECTS: IProject[] = [
     blurImage: "/projects/blur/crazyStaickers.png",
     description: "AI-assisted intent-mapping for Digital Twin Networks. IEEE Outstanding Paper Award @ PICom 2025.",
     gradient: ["#2D1B4E", "#4A2C6A"],
-    url: "https://fondazione-restart.it/it/progetti/s1-coherent/",
-    tech: [],
+    url: "https://doi.org/10.1109/picom68402.2025.00017",
+    tech: ["nodejs", "typescript"],
     category: "professional",
   },
   // Academic Projects
+  {
+    name: "inRuolo",
+    image: "/projects/Mockup/classi4.png",
+    blurImage: "/projects/blur/Mockup/classi4.png",
+    description: "Web platform for aspiring teachers.",
+    gradient: ["#1F6582", "#1ABCFE"],
+    url: "https://github.com/doomL/in-ruolo",
+    tech: ["javascript", "cs", "asp", "sqlserver"],
+    category: "academic",
+  },
   {
     name: "FaceRec",
     image: "/projects/faceRec.png",
@@ -180,27 +192,34 @@ export const PROJECTS: IProject[] = [
   },
 ];
 
-export const SKILLS = {
-  backend: [
-    "java",
-    "python",
-    "nodejs",
-    "cs",
-  ],
-  databases:[
-    "mysql",
-    "sql",
-    "mariadb",
-    "mongodb",
-  ],
-  frontend: [
-    "javascript",
-    "jquery",
-    "html",
-    "css",
-  ],
-  other: ["docker","figma","illustrator", "photoshop","git","lightroom", "aftereffects"],
-};
+export interface ISkillIconRow {
+  title: string;
+  icons: string;
+  badges?: string[];
+}
+
+/** Skill icon rows (skillicons.dev); badges are text-only when no icon exists in the set. */
+export const SKILL_ICON_ROWS: ISkillIconRow[] = [
+  {
+    title: "Back-end Development",
+    icons: "spring,dotnet,java,python,nodejs,cs,flask,express,fastapi",
+  },
+  {
+    title: "Front-end Development",
+    icons: "react,tailwind,nextjs,angular,jquery,js,css,bootstrap,html,figma",
+  },
+  {
+    title: "Databases",
+    icons: "mysql,postgres,mongodb,redis",
+    badges: ["Qdrant"],
+  },
+  {
+    title: "Others",
+    icons:
+      "cpp,git,nginx,solidity,androidstudio,kubernetes,docker,vercel,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton",
+    badges: ["OpenRouter"],
+  },
+];
 
 export enum Branch {
   LEFT = "leftSide",
@@ -240,7 +259,8 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     type: NodeTypes.CHECKPOINT,
     title: "Computer Science Bachelor",
     size: ItemSize.SMALL,
-    subtitle:"Started Bachelor Degree in Computer Science at Università della Calabria"+'<br/><br/><br/>',
+    subtitle:
+      "Started Bachelor Degree in Computer Science at Università della Calabria",
     image: "/timeline/unical.png",
     slideImage: "/timeline/bgunical.jpg",
     shouldDrawLine: true,
@@ -248,7 +268,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "2019"+'</br></br></br>',
+    title: "2019",
     size: ItemSize.LARGE,
     shouldDrawLine: false,
     alignment: Branch.LEFT,
@@ -272,7 +292,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "School Internship - Artémat",
     size: ItemSize.SMALL,
     subtitle:
-      "Development of a web application with face and object recognition. Use of: Node.js, Python, Flask, OpenCV."+'</br></br></br></br> ',
+      "Development of a web application with face and object recognition. Use of: Node.js, Python, Flask, OpenCV.",
     image: "/timeline/logo_art.svg",
     slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
@@ -375,7 +395,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "Full-Stack Developer - Artémat",
     size: ItemSize.SMALL,
     subtitle:
-      "Full-Stack Developer at Artémat, using Technologies like Node.js, React, Next.js, Python, LangChain, Spring, Angular."+'</br></br></br></br> ',
+      "Full-Stack Developer at Artémat, using Technologies like Node.js, React, Next.js, Python, LangChain, Spring, Angular.",
     image: "/timeline/logo_art.svg",
     slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
