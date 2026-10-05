@@ -2,6 +2,7 @@
 
 import {
   ARTEMAT_EMPLOYER,
+  LogoBackdrop,
   MENULINKS,
   PERSONAL_WORK_HUBS,
   PROFESSIONAL_PRODUCTS,
@@ -15,9 +16,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 const LINK_CARD =
   "flex flex-col p-5 rounded-2xl bg-gray-800/40 border border-gray-700/50 hover:border-amber-500/40 hover:bg-gray-800/60 transition-colors link h-full";
 
-/** Light well so dark/colored brand marks stay readable on the dark page. */
-const LOGO_WELL =
+const LOGO_WELL_LIGHT =
   "mb-4 flex min-h-[3.5rem] w-full items-center rounded-xl border border-gray-200/10 bg-gray-50 px-4 py-2.5 shadow-inner";
+
+const LOGO_WELL_NONE =
+  "mb-4 flex min-h-[3.5rem] w-full items-center px-1 py-1";
 
 const AboutSection = () => {
   const quoteRef: MutableRefObject<HTMLDivElement> = useRef(null);
@@ -73,24 +76,42 @@ const AboutSection = () => {
     return aboutScrollTriggerInstance.kill;
   }, [quoteRef, targetSection]);
 
+  const logoWellClass = (backdrop: LogoBackdrop) =>
+    backdrop === "light" ? LOGO_WELL_LIGHT : LOGO_WELL_NONE;
+
   const renderLogo = (item: IExternalWorkLink) => {
     const isRemote = item.logo.startsWith("http");
-    const isLightMark = item.name === "GitHub";
     return (
-      <div className={LOGO_WELL}>
+      <div className={logoWellClass(item.logoBackdrop)}>
         <Image
           src={item.logo}
           alt=""
           width={160}
           height={40}
-          className={`h-9 w-auto max-w-[11rem] object-contain object-left ${
-            isLightMark ? "brightness-0" : ""
-          }`}
+          className="h-9 w-auto max-w-[11rem] object-contain object-left"
           unoptimized={isRemote}
         />
       </div>
     );
   };
+
+  const renderEmployerLink = () => (
+    <a
+      href={ARTEMAT_EMPLOYER.url}
+      className="link text-amber-300 hover:text-amber-200 inline-flex items-center gap-2 align-middle"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <Image
+        src={ARTEMAT_EMPLOYER.logo}
+        alt=""
+        width={88}
+        height={28}
+        className="h-5 w-auto inline-block"
+      />
+      <span>{ARTEMAT_EMPLOYER.name}</span>
+    </a>
+  );
 
   const renderLinkCard = (item: IExternalWorkLink) => (
     <a
@@ -149,25 +170,9 @@ const AboutSection = () => {
           Products &amp; code
         </h2>
         <p className="text-lg text-gray-300 mt-4 leading-relaxed">
-          I work at{" "}
-          <a
-            href={ARTEMAT_EMPLOYER.url}
-            className="link text-amber-300 hover:text-amber-200 inline-flex items-center gap-2 align-middle rounded-lg border border-gray-200/10 bg-gray-50 px-2 py-0.5"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Image
-              src={ARTEMAT_EMPLOYER.logo}
-              alt=""
-              width={88}
-              height={28}
-              className="h-5 w-auto inline-block"
-            />
-            <span className="text-gray-900 font-medium">{ARTEMAT_EMPLOYER.name}</span>
-          </a>
-          . Professional HR and education platforms ship on their own sites. Side
-          projects and demos live on Doogma Labs; repositories and coursework on
-          GitHub.
+          I work at {renderEmployerLink()}. Professional HR and education
+          platforms ship on their own sites. Side projects and demos live on
+          Doogma Labs; repositories and coursework on GitHub.
         </p>
 
         <h3 className="text-sm font-semibold tracking-widest text-gray-500 mt-10 mb-4 uppercase">

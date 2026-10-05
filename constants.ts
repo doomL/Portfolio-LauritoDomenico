@@ -56,17 +56,22 @@ export const SOCIAL_LINKS = {
 
 export const DOOGMA_LABS_URL = "https://doogmalabs.com/#progetti";
 
+/** `light` = pale well for dark marks; `none` = logo already readable on the dark page. */
+export type LogoBackdrop = "light" | "none";
+
 export interface IExternalWorkLink {
   name: string;
   description: string;
   url: string;
   logo: string;
+  logoBackdrop: LogoBackdrop;
 }
 
 export const ARTEMAT_EMPLOYER = {
   name: "Artémat",
   url: "https://www.artemat.it/",
   logo: "/timeline/logo_art.svg",
+  logoBackdrop: "none" as LogoBackdrop,
 };
 
 /** HR / education product landings. */
@@ -78,6 +83,7 @@ export const PROFESSIONAL_PRODUCTS: IExternalWorkLink[] = [
     url: "https://www.inplayai.it/",
     logo:
       "https://www.inplayai.it/inplayai/wp-content/uploads/2025/10/logoORIZZ-1.svg",
+    logoBackdrop: "light",
   },
   {
     name: "SkillMosaico",
@@ -86,12 +92,14 @@ export const PROFESSIONAL_PRODUCTS: IExternalWorkLink[] = [
     url: "https://www.skillmosaico.it/",
     logo:
       "https://www.skillmosaico.it/website/wp-content/uploads/2025/09/logo_col_orizz_byArt.svg",
+    logoBackdrop: "light",
   },
   {
     name: "inRuolo",
     description: "Web platform for aspiring teachers and public competitions.",
     url: "https://inruolo.it/",
     logo: "https://inruolo.it/images/logo/inRuolo/logoLongTransparent.png",
+    logoBackdrop: "light",
   },
 ];
 
@@ -102,12 +110,14 @@ export const PERSONAL_WORK_HUBS: IExternalWorkLink[] = [
       "Sites, apps, games, and AI tools. Full catalog with live demos.",
     url: DOOGMA_LABS_URL,
     logo: "https://doogmalabs.com/assets/favicon.svg",
+    logoBackdrop: "none",
   },
   {
     name: "GitHub",
     description: "Open source, experiments, and older university projects.",
     url: SOCIAL_LINKS.github,
     logo: "/social/github.svg",
+    logoBackdrop: "none",
   },
 ];
 
