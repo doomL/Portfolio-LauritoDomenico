@@ -51,7 +51,7 @@ const SkillsSection = () => {
       <h1 className="section-heading seq mt-2">My Skills</h1>
       <h2 className="text-2xl md:max-w-2xl w-full seq mt-2">
         Full-stack delivery from AI backends and LLM integrations to polished
-        React/Next.js interfaces — plus the DevOps and data stores that keep
+        React/Next.js interfaces, plus the DevOps and data stores that keep
         systems running in production.
       </h2>
     </div>

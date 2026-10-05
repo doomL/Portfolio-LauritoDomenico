@@ -1,17 +1,19 @@
  
 
 import {
+  ARTEMAT_EMPLOYER,
   MENULINKS,
   PERSONAL_WORK_HUBS,
   PROFESSIONAL_PRODUCTS,
   IExternalWorkLink,
 } from "../../constants";
+import Image from "next/image";
 import { gsap, Linear } from "gsap";
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const LINK_CARD =
-  "block p-5 rounded-2xl bg-gray-800/40 border border-gray-700/50 hover:border-amber-500/40 hover:bg-gray-800/60 transition-colors link";
+  "flex flex-col p-5 rounded-2xl bg-gray-800/40 border border-gray-700/50 hover:border-amber-500/40 hover:bg-gray-800/60 transition-colors link h-full";
 
 const AboutSection = () => {
   const quoteRef: MutableRefObject<HTMLDivElement> = useRef(null);
@@ -67,6 +69,22 @@ const AboutSection = () => {
     return aboutScrollTriggerInstance.kill;
   }, [quoteRef, targetSection]);
 
+  const renderLogo = (item: IExternalWorkLink) => {
+    const isRemote = item.logo.startsWith("http");
+    return (
+      <div className="h-10 mb-4 flex items-center">
+        <Image
+          src={item.logo}
+          alt=""
+          width={160}
+          height={40}
+          className="h-8 w-auto max-w-[10rem] object-contain object-left"
+          unoptimized={isRemote}
+        />
+      </div>
+    );
+  };
+
   const renderLinkCard = (item: IExternalWorkLink) => (
     <a
       key={item.name}
@@ -75,8 +93,9 @@ const AboutSection = () => {
       rel="noreferrer"
       className={LINK_CARD}
     >
+      {renderLogo(item)}
       <span className="text-lg font-semibold text-white">{item.name}</span>
-      <span className="block text-sm text-gray-400 mt-2 leading-relaxed">
+      <span className="block text-sm text-gray-400 mt-2 leading-relaxed flex-grow">
         {item.description}
       </span>
       <span className="inline-block text-amber-400 text-sm font-medium mt-3">
@@ -123,7 +142,23 @@ const AboutSection = () => {
           Products &amp; code
         </h2>
         <p className="text-lg text-gray-300 mt-4 leading-relaxed">
-          Professional HR and education platforms ship on their own sites. Side
+          I work at{" "}
+          <a
+            href={ARTEMAT_EMPLOYER.url}
+            className="link text-amber-300 hover:text-amber-200 inline-flex items-center gap-2 align-middle"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image
+              src={ARTEMAT_EMPLOYER.logo}
+              alt=""
+              width={88}
+              height={28}
+              className="h-5 w-auto inline-block"
+            />
+            <span>{ARTEMAT_EMPLOYER.name}</span>
+          </a>
+          . Professional HR and education platforms ship on their own sites. Side
           projects and demos live on Doogma Labs; repositories and coursework on
           GitHub.
         </p>

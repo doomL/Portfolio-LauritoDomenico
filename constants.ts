@@ -60,32 +60,38 @@ export interface IExternalWorkLink {
   name: string;
   description: string;
   url: string;
+  logo: string;
 }
 
-/** HR / education products (Artémat and related landings). */
+export const ARTEMAT_EMPLOYER = {
+  name: "Artémat",
+  url: "https://www.artemat.it/",
+  logo: "/timeline/logo_art.svg",
+};
+
+/** HR / education product landings. */
 export const PROFESSIONAL_PRODUCTS: IExternalWorkLink[] = [
   {
     name: "InPlayAI",
     description:
-      "AI-powered HR assessment — how candidates think, not only what they answer.",
+      "AI-powered HR assessment. How candidates think, not only what they answer.",
     url: "https://www.inplayai.it/",
+    logo:
+      "https://www.inplayai.it/inplayai/wp-content/uploads/2025/10/logoORIZZ-1.svg",
   },
   {
     name: "SkillMosaico",
     description:
       "Configurable assessment platform with gamified simulation scenarios.",
     url: "https://www.skillmosaico.it/",
+    logo:
+      "https://www.skillmosaico.it/website/wp-content/uploads/2025/09/logo_col_orizz_byArt.svg",
   },
   {
     name: "inRuolo",
     description: "Web platform for aspiring teachers and public competitions.",
     url: "https://inruolo.it/",
-  },
-  {
-    name: "Artémat",
-    description:
-      "HR & tech studio — innovation, education, and digital solutions for talent.",
-    url: "https://www.artemat.it/",
+    logo: "https://inruolo.it/images/logo/inRuolo/logoLongTransparent.png",
   },
 ];
 
@@ -93,13 +99,15 @@ export const PERSONAL_WORK_HUBS: IExternalWorkLink[] = [
   {
     name: "Doogma Labs",
     description:
-      "Sites, apps, games, and AI tools — full catalog with live demos.",
+      "Sites, apps, games, and AI tools. Full catalog with live demos.",
     url: DOOGMA_LABS_URL,
+    logo: "https://doogmalabs.com/assets/favicon.svg",
   },
   {
     name: "GitHub",
     description: "Open source, experiments, and older university projects.",
     url: SOCIAL_LINKS.github,
+    logo: "/social/github.svg",
   },
 ];
 
@@ -321,7 +329,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "UMARI Project — Artémat S.r.l.",
+    title: "UMARI Project @ Artémat S.r.l.",
     size: ItemSize.SMALL,
     subtitle:
       "Blockchain-based digital passport for agricultural traceability. Artemat + MACROFARM + CGF Food.",
@@ -342,7 +350,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "IEEE Outstanding Paper Award 🏆",
     size: ItemSize.SMALL,
     subtitle:
-      "AI-assisted Intent-Mapping for Digital Twin Networks — IEEE PICom 2025, Japan. VOLTA COHERENT project.",
+      "AI-assisted Intent-Mapping for Digital Twin Networks. IEEE PICom 2025, Japan. VOLTA COHERENT project.",
     image: "/timeline/logo_art.svg",
     slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
@@ -360,7 +368,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "ECAI 2025 Publication",
     size: ItemSize.SMALL,
     subtitle:
-      "LUMI Agents: A Fuzzy BDI Framework for Intelligent Agents — CEUR-WS Vol-4165, ECAI 2025.",
+      "LUMI Agents: A Fuzzy BDI Framework for Intelligent Agents. CEUR-WS Vol-4165, ECAI 2025.",
     image: "/timeline/unical.png",
     slideImage: "/timeline/bgunical.jpg",
     shouldDrawLine: true,
