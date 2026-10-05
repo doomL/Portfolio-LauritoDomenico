@@ -13,8 +13,8 @@ export const MENULINKS = [
     ref: "home",
   },
   {
-    name: "Works",
-    ref: "works",
+    name: "About",
+    ref: "about",
   },
   {
     name: "Publications",
@@ -56,91 +56,50 @@ export const SOCIAL_LINKS = {
 
 export const DOOGMA_LABS_URL = "https://doogmalabs.com/#progetti";
 
-export type ProjectImageStyle = "logo" | "screenshot";
-
-export interface IProject {
+export interface IExternalWorkLink {
   name: string;
-  image: string;
-  blurImage: string;
   description: string;
-  gradient: [string, string];
   url: string;
-  tech: string[];
-  imageStyle?: ProjectImageStyle;
 }
 
-const DOOGMA_SHOT = (file: string) =>
-  `https://doogmalabs.com/assets/shots/${file}`;
-
-/** Curated highlights — full catalog on Doogma Labs; older repos on GitHub. */
-export const PROJECTS: IProject[] = [
+/** HR / education products (Artémat and related landings). */
+export const PROFESSIONAL_PRODUCTS: IExternalWorkLink[] = [
   {
     name: "InPlayAI",
-    image:
-      "https://www.inplayai.it/inplayai/wp-content/uploads/2025/10/logoORIZZ-1.svg",
-    blurImage: "/projects/blur/crazyStaickers.png",
     description:
-      "AI-powered HR assessment. LLM-based analysis of how candidates think, not just what they answer.",
-    gradient: ["#0F172A", "#1E3A5F"],
+      "AI-powered HR assessment — how candidates think, not only what they answer.",
     url: "https://www.inplayai.it/",
-    tech: ["react", "next", "nodejs", "typescript"],
-    imageStyle: "logo",
   },
   {
     name: "SkillMosaico",
-    image:
-      "https://www.skillmosaico.it/website/wp-content/uploads/2025/09/logo_col_orizz_byArt.svg",
-    blurImage: "/projects/blur/crazyStaickers.png",
     description:
-      "Configurable assessment platform. Build ideal candidate profiles with gamified simulation scenarios.",
-    gradient: ["#2E6B6B", "#1A5252"],
+      "Configurable assessment platform with gamified simulation scenarios.",
     url: "https://www.skillmosaico.it/",
-    tech: ["react", "next", "tailwind", "typescript"],
-    imageStyle: "logo",
   },
   {
-    name: "OpenRouter Studio",
-    image: DOOGMA_SHOT("openrouterstudio.webp"),
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description:
-      "Visual builder for AI workflows — text, images, and video by connecting blocks and models.",
-    gradient: ["#1e1b4b", "#312e81"],
-    url: "https://openrouterstudio.lauritodomenico.com/",
-    tech: ["react", "next", "typescript"],
-    imageStyle: "screenshot",
+    name: "inRuolo",
+    description: "Web platform for aspiring teachers and public competitions.",
+    url: "https://inruolo.it/",
   },
   {
-    name: "Nimbus",
-    image: DOOGMA_SHOT("nimbus.webp"),
-    blurImage: "/projects/blur/crazyStaickers.png",
+    name: "Artémat",
     description:
-      "Semantic photo search — describe a scene in words and find matching shots in your library.",
-    gradient: ["#0c4a6e", "#0369a1"],
-    url: "https://nimbus.lauritodomenico.com/",
-    tech: ["react", "next", "nodejs"],
-    imageStyle: "screenshot",
+      "HR & tech studio — innovation, education, and digital solutions for talent.",
+    url: "https://www.artemat.it/",
   },
-  {
-    name: "Cervellone",
-    image: DOOGMA_SHOT("cervellone.webp"),
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description:
-      "Live quiz nights: phones as buzzers, big screen for the room, AI-assisted question generation.",
-    gradient: ["#4a044e", "#86198f"],
-    url: "https://cervellone.doogmalabs.com/",
-    tech: ["react", "next", "nodejs"],
-    imageStyle: "screenshot",
-  },
+];
+
+export const PERSONAL_WORK_HUBS: IExternalWorkLink[] = [
   {
     name: "Doogma Labs",
-    image: DOOGMA_SHOT("chronoclash.webp"),
-    blurImage: "/projects/blur/crazyStaickers.png",
     description:
-      "Siti, app, giochi e strumenti AI — il catalogo completo con screenshot e link live.",
-    gradient: ["#422006", "#b45309"],
+      "Sites, apps, games, and AI tools — full catalog with live demos.",
     url: DOOGMA_LABS_URL,
-    tech: [],
-    imageStyle: "screenshot",
+  },
+  {
+    name: "GitHub",
+    description: "Open source, experiments, and older university projects.",
+    url: SOCIAL_LINKS.github,
   },
 ];
 

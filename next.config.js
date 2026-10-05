@@ -9,7 +9,6 @@ const nextConfig = {
             'www.inplayai.it',
             'www.skillmosaico.it',
             'www.artemat.it',
-            'doogmalabs.com',
         ],
     },
 };

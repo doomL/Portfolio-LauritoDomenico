@@ -1,8 +1,17 @@
  
 
+import {
+  MENULINKS,
+  PERSONAL_WORK_HUBS,
+  PROFESSIONAL_PRODUCTS,
+  IExternalWorkLink,
+} from "../../constants";
 import { gsap, Linear } from "gsap";
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+const LINK_CARD =
+  "block p-5 rounded-2xl bg-gray-800/40 border border-gray-700/50 hover:border-amber-500/40 hover:bg-gray-800/60 transition-colors link";
 
 const AboutSection = () => {
   const quoteRef: MutableRefObject<HTMLDivElement> = useRef(null);
@@ -58,6 +67,24 @@ const AboutSection = () => {
     return aboutScrollTriggerInstance.kill;
   }, [quoteRef, targetSection]);
 
+  const renderLinkCard = (item: IExternalWorkLink) => (
+    <a
+      key={item.name}
+      href={item.url}
+      target="_blank"
+      rel="noreferrer"
+      className={LINK_CARD}
+    >
+      <span className="text-lg font-semibold text-white">{item.name}</span>
+      <span className="block text-sm text-gray-400 mt-2 leading-relaxed">
+        {item.description}
+      </span>
+      <span className="inline-block text-amber-400 text-sm font-medium mt-3">
+        Visit →
+      </span>
+    </a>
+  );
+
   const renderQuotes = (): React.ReactNode => (
     <h1 ref={quoteRef} className="font-medium text-3xl sm:text-4xl md:text-6xl">
       <span
@@ -79,12 +106,42 @@ const AboutSection = () => {
     </h1>
   );
 
+  const aboutId =
+    MENULINKS.find((l) => l.ref === "about")?.ref ?? "about";
+
   return (
     <section
       className={`tall:pt-20 tall:pb-16 pt-40 pb-24 w-full relative select-none section-container`}
+      id={aboutId}
       ref={targetSection}
     >
       {renderQuotes()}
+
+      <div className="mt-16 md:mt-24 max-w-4xl">
+        <p className="section-title-sm">WHERE TO LOOK</p>
+        <h2 className="section-heading mt-2 text-3xl md:text-4xl">
+          Products &amp; code
+        </h2>
+        <p className="text-lg text-gray-300 mt-4 leading-relaxed">
+          Professional HR and education platforms ship on their own sites. Side
+          projects and demos live on Doogma Labs; repositories and coursework on
+          GitHub.
+        </p>
+
+        <h3 className="text-sm font-semibold tracking-widest text-gray-500 mt-10 mb-4 uppercase">
+          Professional products
+        </h3>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {PROFESSIONAL_PRODUCTS.map(renderLinkCard)}
+        </div>
+
+        <h3 className="text-sm font-semibold tracking-widest text-gray-500 mt-10 mb-4 uppercase">
+          Personal builds
+        </h3>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {PERSONAL_WORK_HUBS.map(renderLinkCard)}
+        </div>
+      </div>
     </section>
   );
 };
