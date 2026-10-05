@@ -15,6 +15,10 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 const LINK_CARD =
   "flex flex-col p-5 rounded-2xl bg-gray-800/40 border border-gray-700/50 hover:border-amber-500/40 hover:bg-gray-800/60 transition-colors link h-full";
 
+/** Light well so dark/colored brand marks stay readable on the dark page. */
+const LOGO_WELL =
+  "mb-4 flex min-h-[3.5rem] w-full items-center rounded-xl border border-gray-200/10 bg-gray-50 px-4 py-2.5 shadow-inner";
+
 const AboutSection = () => {
   const quoteRef: MutableRefObject<HTMLDivElement> = useRef(null);
   const targetSection: MutableRefObject<HTMLDivElement> = useRef(null);
@@ -71,14 +75,17 @@ const AboutSection = () => {
 
   const renderLogo = (item: IExternalWorkLink) => {
     const isRemote = item.logo.startsWith("http");
+    const isLightMark = item.name === "GitHub";
     return (
-      <div className="h-10 mb-4 flex items-center">
+      <div className={LOGO_WELL}>
         <Image
           src={item.logo}
           alt=""
           width={160}
           height={40}
-          className="h-8 w-auto max-w-[10rem] object-contain object-left"
+          className={`h-9 w-auto max-w-[11rem] object-contain object-left ${
+            isLightMark ? "brightness-0" : ""
+          }`}
           unoptimized={isRemote}
         />
       </div>
@@ -145,7 +152,7 @@ const AboutSection = () => {
           I work at{" "}
           <a
             href={ARTEMAT_EMPLOYER.url}
-            className="link text-amber-300 hover:text-amber-200 inline-flex items-center gap-2 align-middle"
+            className="link text-amber-300 hover:text-amber-200 inline-flex items-center gap-2 align-middle rounded-lg border border-gray-200/10 bg-gray-50 px-2 py-0.5"
             target="_blank"
             rel="noreferrer"
           >
@@ -156,7 +163,7 @@ const AboutSection = () => {
               height={28}
               className="h-5 w-auto inline-block"
             />
-            <span>{ARTEMAT_EMPLOYER.name}</span>
+            <span className="text-gray-900 font-medium">{ARTEMAT_EMPLOYER.name}</span>
           </a>
           . Professional HR and education platforms ship on their own sites. Side
           projects and demos live on Doogma Labs; repositories and coursework on
