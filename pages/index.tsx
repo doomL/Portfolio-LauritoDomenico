@@ -12,7 +12,6 @@ import Header from "@/components/common/header";
 import ProgressIndicator from "@/components/common/progress-indicator";
 import Cursor from "@/components/common/cursor";
 import HeroSection from "@/components/home/hero";
-import ProjectsSection from "@/components/home/projects";
 import PublicationsSection from "@/components/home/publications";
 import QuoteSection from "@/components/home/quote";
 import SkillsSection from "@/components/home/skills";
@@ -77,7 +76,6 @@ export default function Home() {
           {renderBackdrop()}
           <HeroSection />
           <AboutSection />
-          <ProjectsSection isDesktop={isDesktop} />
           <PublicationsSection />
           <QuoteSection />
           <SkillsSection />

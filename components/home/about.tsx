@@ -1,8 +1,26 @@
  
 
+import {
+  ARTEMAT_EMPLOYER,
+  LogoBackdrop,
+  MENULINKS,
+  PERSONAL_WORK_HUBS,
+  PROFESSIONAL_PRODUCTS,
+  IExternalWorkLink,
+} from "../../constants";
+import Image from "next/image";
 import { gsap, Linear } from "gsap";
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+const LINK_CARD =
+  "flex flex-col p-5 rounded-2xl bg-gray-800/40 border border-gray-700/50 hover:border-amber-500/40 hover:bg-gray-800/60 transition-colors link h-full";
+
+const LOGO_WELL_LIGHT =
+  "mb-4 flex min-h-[3.5rem] w-full items-center rounded-xl border border-gray-200/10 bg-gray-50 px-4 py-2.5 shadow-inner";
+
+const LOGO_WELL_NONE =
+  "mb-4 flex min-h-[3.5rem] w-full items-center px-1 py-1";
 
 const AboutSection = () => {
   const quoteRef: MutableRefObject<HTMLDivElement> = useRef(null);
@@ -58,6 +76,62 @@ const AboutSection = () => {
     return aboutScrollTriggerInstance.kill;
   }, [quoteRef, targetSection]);
 
+  const logoWellClass = (backdrop: LogoBackdrop) =>
+    backdrop === "light" ? LOGO_WELL_LIGHT : LOGO_WELL_NONE;
+
+  const renderLogo = (item: IExternalWorkLink) => {
+    const isRemote = item.logo.startsWith("http");
+    return (
+      <div className={logoWellClass(item.logoBackdrop)}>
+        <Image
+          src={item.logo}
+          alt=""
+          width={160}
+          height={40}
+          className="h-9 w-auto max-w-[11rem] object-contain object-left"
+          unoptimized={isRemote}
+        />
+      </div>
+    );
+  };
+
+  const renderEmployerLink = () => (
+    <a
+      href={ARTEMAT_EMPLOYER.url}
+      className="link inline-flex items-center align-middle hover:opacity-90 transition-opacity"
+      target="_blank"
+      rel="noreferrer"
+      aria-label={ARTEMAT_EMPLOYER.name}
+    >
+      <Image
+        src={ARTEMAT_EMPLOYER.logo}
+        alt={ARTEMAT_EMPLOYER.name}
+        width={100}
+        height={32}
+        className="h-6 w-auto inline-block"
+      />
+    </a>
+  );
+
+  const renderLinkCard = (item: IExternalWorkLink) => (
+    <a
+      key={item.name}
+      href={item.url}
+      target="_blank"
+      rel="noreferrer"
+      className={LINK_CARD}
+    >
+      {renderLogo(item)}
+      <span className="text-lg font-semibold text-white">{item.name}</span>
+      <span className="block text-sm text-gray-400 mt-2 leading-relaxed flex-grow">
+        {item.description}
+      </span>
+      <span className="inline-block text-amber-400 text-sm font-medium mt-3">
+        Visit →
+      </span>
+    </a>
+  );
+
   const renderQuotes = (): React.ReactNode => (
     <h1 ref={quoteRef} className="font-medium text-3xl sm:text-4xl md:text-6xl">
       <span
@@ -79,12 +153,42 @@ const AboutSection = () => {
     </h1>
   );
 
+  const aboutId =
+    MENULINKS.find((l) => l.ref === "about")?.ref ?? "about";
+
   return (
     <section
       className={`tall:pt-20 tall:pb-16 pt-40 pb-24 w-full relative select-none section-container`}
+      id={aboutId}
       ref={targetSection}
     >
       {renderQuotes()}
+
+      <div className="mt-16 md:mt-24 max-w-4xl">
+        <p className="section-title-sm">WHERE TO LOOK</p>
+        <h2 className="section-heading mt-2 text-3xl md:text-4xl">
+          Products &amp; code
+        </h2>
+        <p className="text-lg text-gray-300 mt-4 leading-relaxed">
+          I work at {renderEmployerLink()}. Professional HR and education
+          platforms ship on their own sites. Side projects and demos live on
+          Doogma Labs; repositories and coursework on GitHub.
+        </p>
+
+        <h3 className="text-sm font-semibold tracking-widest text-gray-500 mt-10 mb-4 uppercase">
+          Professional products
+        </h3>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {PROFESSIONAL_PRODUCTS.map(renderLinkCard)}
+        </div>
+
+        <h3 className="text-sm font-semibold tracking-widest text-gray-500 mt-10 mb-4 uppercase">
+          Personal builds
+        </h3>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {PERSONAL_WORK_HUBS.map(renderLinkCard)}
+        </div>
+      </div>
     </section>
   );
 };

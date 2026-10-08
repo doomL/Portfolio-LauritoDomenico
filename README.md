@@ -24,6 +24,10 @@ This repository contains the source code for Domenico Laurito's personal portfol
 
 For more details, visit the [live portfolio website](https://portfolio.lauritodomenico.com).
 
+## Deployment
+
+Static export (`out/`) is deployed to FTP via GitHub Actions on push to `main`. Configure repository secrets as described in [docs/DEPLOY.md](docs/DEPLOY.md).
+
 ## Author
 
 **Domenico Laurito**  

@@ -13,8 +13,8 @@ export const MENULINKS = [
     ref: "home",
   },
   {
-    name: "Works",
-    ref: "works",
+    name: "About",
+    ref: "about",
   },
   {
     name: "Publications",
@@ -42,7 +42,7 @@ export const TYPED_STRINGS = [
 ];
 
 export const HERO_BIO =
-  "Full Stack Developer & AI Systems Engineer.";
+  "Full Stack Developer and AI Systems Engineer with a focus on LLM-powered applications, HR tech platforms, and applied research. Co-author of 2 academic publications, including an IEEE Outstanding Paper Award at PICom 2025.";
 
 export const EMAIL = "laurito.dom@gmail.com";
 
@@ -54,153 +54,98 @@ export const SOCIAL_LINKS = {
   mail: "mailto:laurito.dom@gmail.com"
 };
 
-export interface IProject {
+export const DOOGMA_LABS_URL = "https://doogmalabs.com/#progetti";
+
+/** `light` = pale well for dark marks; `none` = logo already readable on the dark page. */
+export type LogoBackdrop = "light" | "none";
+
+export interface IExternalWorkLink {
   name: string;
-  image: string;
-  blurImage: string;
   description: string;
-  gradient: [string, string];
   url: string;
-  tech: string[];
-  category?: "professional" | "academic";
+  logo: string;
+  logoBackdrop: LogoBackdrop;
 }
 
-export const PROJECTS: IProject[] = [
-  // Professional Work (images from website og:image)
+export const ARTEMAT_EMPLOYER = {
+  name: "Artémat",
+  url: "https://www.artemat.it/",
+  logo: "/timeline/logo_art.svg",
+  logoBackdrop: "none" as LogoBackdrop,
+};
+
+/** HR / education product landings. */
+export const PROFESSIONAL_PRODUCTS: IExternalWorkLink[] = [
   {
     name: "InPlayAI",
-    image: "https://www.inplayai.it/inplayai/wp-content/uploads/2025/10/logoORIZZ-1.svg",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "AI-powered HR assessment. LLM-based analysis of how candidates think, not just what they answer.",
-    gradient: ["#0F172A", "#1E3A5F"],
+    description:
+      "AI-powered HR assessment. How candidates think, not only what they answer.",
     url: "https://www.inplayai.it/",
-    tech: [],
-    category: "professional",
+    logo:
+      "https://www.inplayai.it/inplayai/wp-content/uploads/2025/10/logoORIZZ-1.svg",
+    logoBackdrop: "light",
   },
   {
     name: "SkillMosaico",
-    image: "https://www.skillmosaico.it/website/wp-content/uploads/2025/09/logo_col_orizz_byArt.svg",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Configurable assessment platform. Build ideal candidate profiles with gamified simulation scenarios.",
-    gradient: ["#2E6B6B", "#1A5252"],
+    description:
+      "Configurable assessment platform with gamified simulation scenarios.",
     url: "https://www.skillmosaico.it/",
-    tech: [],
-    category: "professional",
+    logo:
+      "https://www.skillmosaico.it/website/wp-content/uploads/2025/09/logo_col_orizz_byArt.svg",
+    logoBackdrop: "light",
   },
   {
     name: "inRuolo",
-    image: "/projects/Mockup/classi4.png",
-    blurImage: "/projects/blur/Mockup/classi4.png",
-    description: "Web platform for aspiring teachers.",
-    gradient: ["#1F6582", "#1ABCFE"],
-    url: "https://github.com/doomL/in-ruolo",
-    tech: ["javascript", "cs", "asp","sqlserver"],
-    category: "professional",
-  },
-  {
-    name: "UMARI",
-    image: "/timeline/bgartemat.jpg",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Blockchain digital passport for agricultural traceability. Verified product data via QR code.",
-    gradient: ["#0D2818", "#1B4332"],
-    url: "https://www.airi.it/umari-usare-matrici-agroalimentari-di-scarto-per-riciclarle-in-ingredienti-funzionali/",
-    tech: [],
-    category: "professional",
-  },
-  {
-    name: "VOLTA COHERENT",
-    image: "/timeline/bgartemat.jpg",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "AI-assisted intent-mapping for Digital Twin Networks. IEEE Outstanding Paper Award @ PICom 2025.",
-    gradient: ["#2D1B4E", "#4A2C6A"],
-    url: "https://fondazione-restart.it/it/progetti/s1-coherent/",
-    tech: [],
-    category: "professional",
-  },
-  // Academic Projects
-  {
-    name: "FaceRec",
-    image: "/projects/faceRec.png",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Surveillance software with face recognition.",
-    gradient: ["#172839", "#334659"],
-    url: "https://github.com/doomL/faceRecognitionNode",
-    tech: ["nodejs", "npm", "javascript"],
-    category: "academic",
-  },
-  {
-    name: "Crazy StAIckers",
-    image: "/projects/crazyStaickers1.png",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Automatic Crazy Stackers Solver using DLV2.",
-    gradient: ["#552A04", "#614023"],
-    url: "https://github.com/doomL/Crazy-Stackers-IA",
-    tech: ["java"],
-    category: "academic",
-  },
-  {
-    name: "LARA - Arduino Domotic Assistant",
-    image: "/projects/lara.png",
-    blurImage: "/projects/blur/lara.jpg",
-    description: "Vocal assistant for domotic house control via Arduino.",
-    gradient: ["#153BB9", "#0E2C8B"],
-    url: "https://github.com/doomL/Arduino-Domotic-Assistant",
-    tech: ["androidstudio", "java", "arduino"],
-    category: "academic",
-  },
-  {
-    name: "3D Print Store",
-    image: "/projects/3dPrintStore.PNG",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Connect users with local 3D printers.",
-    gradient: ["#245B57", "#004741"],
-    url: "https://github.com/doomL/3DPrintStore",
-    tech: ["java", "jquery", "postgres"],
-    category: "academic",
-  },
-  {
-    name: "FantaSiw",
-    image: "/projects/FantaSiw.jpg",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "Fantasoccer website for SIW exam @ Unical.",
-    gradient: ["#3A0000", "#771E1E"],
-    url: "https://github.com/doomL/fantasiw-league",
-    tech: ["java", "jquery", "postgres"],
-    category: "academic",
-  },
-  {
-    name: "Together Hike",
-    image: "/projects/togetherHike2.png",
-    blurImage: "/projects/blur/crazyStaickers.png",
-    description: "App to meet and go hiking with people in your area.",
-    gradient: ["#003052", "#167187"],
-    url: "https://www.figma.com/proto/c9DdmzA4PXwpgS9UWydXSa/Prototyping-in-Figma?node-id=0-78&starting-point-node-id=0%3A2&mode=design&t=jIFe985AK0eV6exj-1",
-    tech: ["figma"],
-    category: "academic",
+    description: "Web platform for aspiring teachers and public competitions.",
+    url: "https://inruolo.it/",
+    logo: "https://inruolo.it/images/logo/inRuolo/logoLongTransparent.png",
+    logoBackdrop: "light",
   },
 ];
 
-export const SKILLS = {
-  backend: [
-    "java",
-    "python",
-    "nodejs",
-    "cs",
-  ],
-  databases:[
-    "mysql",
-    "sql",
-    "mariadb",
-    "mongodb",
-  ],
-  frontend: [
-    "javascript",
-    "jquery",
-    "html",
-    "css",
-  ],
-  other: ["docker","figma","illustrator", "photoshop","git","lightroom", "aftereffects"],
-};
+export const PERSONAL_WORK_HUBS: IExternalWorkLink[] = [
+  {
+    name: "Doogma Labs",
+    description:
+      "Sites, apps, games, and AI tools. Full catalog with live demos.",
+    url: DOOGMA_LABS_URL,
+    logo: "https://doogmalabs.com/assets/favicon.svg",
+    logoBackdrop: "none",
+  },
+  {
+    name: "GitHub",
+    description: "Open source, experiments, and older university projects.",
+    url: SOCIAL_LINKS.github,
+    logo: "/social/github.svg",
+    logoBackdrop: "none",
+  },
+];
+
+export interface ISkillIconRow {
+  title: string;
+  icons: string;
+}
+
+/** Skill icon rows (skillicons.dev). */
+export const SKILL_ICON_ROWS: ISkillIconRow[] = [
+  {
+    title: "Back-end Development",
+    icons: "spring,dotnet,java,python,nodejs,cs,flask,express,fastapi",
+  },
+  {
+    title: "Front-end Development",
+    icons: "react,tailwind,nextjs,angular,jquery,js,css,bootstrap,html,figma",
+  },
+  {
+    title: "Databases",
+    icons: "mysql,postgres,mongodb,redis,qdrant",
+  },
+  {
+    title: "Others",
+    icons:
+      "cpp,git,nginx,solidity,androidstudio,kubernetes,docker,vercel,openrouter,wordpress,raspberrypi,arduino,pr,ps,ai,bash,perl,maven,idea,ableton",
+  },
+];
 
 export enum Branch {
   LEFT = "leftSide",
@@ -240,7 +185,8 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     type: NodeTypes.CHECKPOINT,
     title: "Computer Science Bachelor",
     size: ItemSize.SMALL,
-    subtitle:"Started Bachelor Degree in Computer Science at Università della Calabria"+'<br/><br/><br/>',
+    subtitle:
+      "Started Bachelor Degree in Computer Science at Università della Calabria",
     image: "/timeline/unical.png",
     slideImage: "/timeline/bgunical.jpg",
     shouldDrawLine: true,
@@ -248,7 +194,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "2019"+'</br></br></br>',
+    title: "2019",
     size: ItemSize.LARGE,
     shouldDrawLine: false,
     alignment: Branch.LEFT,
@@ -272,7 +218,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "School Internship - Artémat",
     size: ItemSize.SMALL,
     subtitle:
-      "Development of a web application with face and object recognition. Use of: Node.js, Python, Flask, OpenCV."+'</br></br></br></br> ',
+      "Development of a web application with face and object recognition. Use of: Node.js, Python, Flask, OpenCV.",
     image: "/timeline/logo_art.svg",
     slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
@@ -375,7 +321,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "Full-Stack Developer - Artémat",
     size: ItemSize.SMALL,
     subtitle:
-      "Full-Stack Developer at Artémat, using Technologies like Node.js, React, Next.js, Python, LangChain, Spring, Angular."+'</br></br></br></br> ',
+      "Full-Stack Developer at Artémat, using Technologies like Node.js, React, Next.js, Python, LangChain, Spring, Angular.",
     image: "/timeline/logo_art.svg",
     slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
@@ -390,7 +336,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "UMARI Project — Artémat S.r.l.",
+    title: "UMARI Project @ Artémat S.r.l.",
     size: ItemSize.SMALL,
     subtitle:
       "Blockchain-based digital passport for agricultural traceability. Artemat + MACROFARM + CGF Food.",
@@ -411,7 +357,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "IEEE Outstanding Paper Award 🏆",
     size: ItemSize.SMALL,
     subtitle:
-      "AI-assisted Intent-Mapping for Digital Twin Networks — IEEE PICom 2025, Japan. VOLTA COHERENT project.",
+      "AI-assisted Intent-Mapping for Digital Twin Networks. IEEE PICom 2025, Japan. VOLTA COHERENT project.",
     image: "/timeline/logo_art.svg",
     slideImage: "/timeline/bgartemat.jpg",
     shouldDrawLine: true,
@@ -429,7 +375,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "ECAI 2025 Publication",
     size: ItemSize.SMALL,
     subtitle:
-      "LUMI Agents: A Fuzzy BDI Framework for Intelligent Agents — CEUR-WS Vol-4165, ECAI 2025.",
+      "LUMI Agents: A Fuzzy BDI Framework for Intelligent Agents. CEUR-WS Vol-4165, ECAI 2025.",
     image: "/timeline/unical.png",
     slideImage: "/timeline/bgunical.jpg",
     shouldDrawLine: true,

@@ -47,7 +47,7 @@ const QuoteSection = () => {
         }`}
       >
         In the world of <span className="text-strong font-bold">AI systems and web development</span>, 
-        I&apos;m deeply dedicated to building things that work — and that work well.
+        I&apos;m deeply dedicated to building things that work, and that work well.
       </h1>
     </div>
   );
